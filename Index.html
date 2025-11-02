@@ -1,2 +1,1074 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ṛta's Whisper — Mandala I Full Enhanced</title>
+<style>
+  :root{
+    --primary:#4a90e2;
+    --accent:#ffd700;
+    --bg-dark:#0f0c29;
+    --bg-mid:#302b63;
+    --bg-light:#24243e;
+    --text:#ffffff;
+    --panel: rgba(2,2,6,0.7);
+    --glass: rgba(255,255,255,0.03);
+  }
+  *{box-sizing:border-box;font-family:Inter, "Segoe UI", Roboto, system-ui, sans-serif}
+  html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg-dark) 0%, var(--bg-mid) 50%, var(--bg-light) 100%);color:var(--text);overflow:hidden}
+  .stage{position:relative;width:100%;height:100vh;overflow:hidden}
+
+  /* Background layers */
+  .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity .9s ease, filter .9s ease;opacity:0;filter:blur(0px);z-index:0}
+  .bg.show{opacity:1}
+
+  /* cinematic lines */
+  .cinematic{position:absolute;left:50%;top:12%;transform:translateX(-50%);text-align:center;z-index:7;pointer-events:none}
+  .cine-line{font-size:1.25rem;max-width:1100px;color:rgba(255,255,255,0.95);opacity:0;transform:translateY(12px);transition:all .85s ease}
+
+  /* sprites with animations */
+  .sprite{position:absolute;bottom:0;z-index:5;transition:all .6s ease;pointer-events:none;opacity:0;visibility:hidden;filter: brightness(0.7) saturate(0.8);}
+  .sprite.show{opacity:1;visibility:visible}
+  .sprite.player{left:28px;width:340px}
+  .sprite.apsara{left:50%;transform:translateX(-50%);width:380px}
+  .sprite.gandharva{right:28px;width:340px}
+  .sprite.center{left:50%;transform:translateX(-50%);width:420px}
+  
+  /* Breathing animation */
+  @keyframes breathing {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-5px) scale(1.02); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  
+  .sprite.breathing {
+    animation: breathing 4s ease-in-out infinite;
+  }
+  
+  /* Speaking highlight */
+  .sprite.speaking {
+    filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
+    transform: scale(1.05);
+  }
+  
+  /* Emotion effects */
+  .sprite.happy {
+    filter: brightness(1.1) saturate(1.3) hue-rotate(10deg);
+  }
+  
+  .sprite.serious {
+    filter: brightness(0.9) saturate(0.9) contrast(1.1);
+  }
+  
+  .sprite.thoughtful {
+    filter: brightness(1.05) saturate(1.1) hue-rotate(200deg);
+  }
+
+  /* dialogue */
+  .dialogue{position:absolute;left:20px;right:20px;bottom:18px;height:220px;background:var(--panel);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;z-index:9;border:1px solid rgba(255,255,255,0.04);backdrop-filter: blur(6px)}
+  .speaker{font-weight:700;color:var(--accent);font-size:1.2rem}
+  .text{flex:1;font-size:1.05rem;line-height:1.45;color:var(--text);white-space:pre-wrap;padding-left:12px;border-left:3px solid rgba(255,215,0,0.12);overflow:auto}
+  .controls{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .btn{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.04);padding:10px 12px;border-radius:8px;color:var(--text);cursor:pointer;font-weight:700}
+  .btn:hover{background:rgba(74,144,226,0.14);border-color:var(--primary)}
+
+  /* choices overlay */
+  .choices{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);z-index:12;background:var(--panel);padding:18px;border-radius:10px;display:none;min-width:420px;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+  .choices.show{display:block}
+  .choice-grid{display:grid;grid-template-columns:1fr;gap:12px}
+  .choice{padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);cursor:pointer;font-weight:700}
+  .choice:hover{background:rgba(74,144,226,0.14)}
+
+  /* Enhanced puzzle styles */
+  .mantra-puzzle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .puzzle-hint {
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px dashed rgba(255, 215, 0, 0.3);
+    padding: 8px;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+  }
+  
+  .hymn-display {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .hymn-title {
+    color: var(--accent);
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+  }
+  
+  .hymn-sanskrit {
+    font-style: italic;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  
+  .hymn-translation {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .meaning-modal {
+    max-width: 700px;
+    width: 90%;
+  }
+  
+  .meaning-content {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+  
+  .meaning-section {
+    margin-bottom: 15px;
+  }
+  
+  .meaning-section h4 {
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+  
+  .deity-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  
+  .deity-tag {
+    background: rgba(74, 144, 226, 0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+  
+  .theme-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  
+  .theme-tag {
+    background: rgba(255, 215, 0, 0.15);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+  
+  .puzzle-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .hint-btn {
+    background: rgba(255, 215, 0, 0.15);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+  }
+  
+  .hint-btn:hover {
+    background: rgba(255, 215, 0, 0.25);
+  }
+  
+  .skip-btn {
+    background: rgba(255, 100, 100, 0.15);
+    border: 1px solid rgba(255, 100, 100, 0.3);
+  }
+  
+  .skip-btn:hover {
+    background: rgba(255, 100, 100, 0.25);
+  }
+
+  /* HUD */
+  .hud{position:fixed;left:18px;top:18px;background:var(--glass);padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);z-index:11}
+  .hud .line{font-size:0.95rem}
+  
+  /* Hymn Info HUD */
+  .hymn-info{position:fixed;right:18px;top:18px;background:var(--glass);padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);z-index:11}
+  .hymn-info .line{font-size:0.95rem}
+  .hymn-info .mantra{font-style:italic;color:var(--accent);margin-top:4px}
+
+  /* FABs */
+  .fab{position:fixed;right:18px;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;background:var(--primary);color:#fff;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:11}
+  #menuBtn{bottom:18px} #codexBtn{bottom:86px} #saveBtn{bottom:154px} #backBtn{bottom:222px;background:rgba(255,255,255,0.08);display:none}
+
+  /* modals */
+  .modal{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;z-index:20}
+  .modal.show{display:flex}
+  .panel{background:linear-gradient(180deg, rgba(12,10,30,0.98), rgba(18,16,40,0.98));padding:18px;border-radius:10px;max-width:90%;max-height:86%;overflow:auto;border:1px solid rgba(255,255,255,0.03);color:var(--text)}
+  .panel h3{margin:0 0 10px 0;color:var(--accent)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:12px}
+
+  /* toast */
+  #toast{position:fixed;right:18px;top:18px;background:rgba(0,0,0,0.6);padding:8px 12px;border-radius:8px;color:#fff;z-index:22;display:none}
+
+  @media (max-width:800px){
+    .sprite.player{left:6px;width:240px}
+    .sprite.apsara{width:300px}
+    .dialogue{left:10px;right:10px}
+    .choices{min-width:320px}
+    .hymn-info{font-size:0.85rem}
+  }
+  
+  @media (max-width: 600px) {
+    .mantra-puzzle {
+      gap: 8px;
+    }
+    
+    .glyph {
+      width: 70px;
+      height: 70px;
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="stage" id="stage">
+
+    <!-- BACKGROUNDS (evolving layers with images) -->
+    <img id="bgSilence" class="bg show" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80" alt="Silence">
+    <img id="bgWhisper" class="bg" src="https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=1600&q=80" alt="Whisper Flame">
+    <img id="bgAwaken" class="bg" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80" alt="Awaken">
+    <img id="bgIgnite" class="bg" src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=80" alt="Ignite">
+    <img id="bgAgni" class="bg" src="https://images.unsplash.com/photo-1505483531331-fc3cf89fd382?auto=format&fit=crop&w=1600&q=80" alt="Agni Realm">
+
+    <!-- Cinematic text -->
+    <div class="cinematic" id="cinematic">
+      <div id="cine1" class="cine-line">In the beginning, there was no earth, no sky. Only silence — breathing light within itself.</div>
+      <div id="cine2" class="cine-line">From that silence came a whisper. From whisper — flame. And from flame — the hymn.</div>
+      <div id="cine3" class="cine-line">You awaken where verses are born — the Ether of Ṛta. Your memory is smoke. Your name, unknown.</div>
+      <div id="cine4" class="cine-line">A voice sings through the light — delicate, ancient.</div>
+    </div>
+
+    <!-- Sprites -->
+    <img id="player" class="sprite player" src="http://www.sevendestination.com/wp-content/uploads/2025/10/normal-e1761737225955.png" alt="Player">
+    <img id="apsara" class="sprite apsara" src="http://www.sevendestination.com/wp-content/uploads/2025/10/normal-e1761737225955.png" alt="Apsara">
+    <img id="gandharva" class="sprite gandharva" src="http://www.sevendestination.com/wp-content/uploads/2025/10/normal-e1761737225955.png" alt="Gandharva">
+
+    <!-- Dialogue -->
+    <div class="dialogue" id="dialogue">
+      <div class="speaker" id="speaker">—</div>
+      <div class="text" id="dialogueText"> </div>
+      <div class="controls">
+        <div style="display:flex;gap:8px">
+          <button class="btn" id="autoBtn" title="Toggle auto-advance">▶ Auto</button>
+          <button class="btn" id="skipBtn" title="Skip current scene">Skip</button>
+        </div>
+        <div>
+          <button class="btn" id="backBtn">↩ Back</button>
+          <button class="btn" id="nextBtn">Next ▶</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Choices (generic overlay used by engine) -->
+    <div class="choices" id="choices">
+      <div style="text-align:center;margin-bottom:10px;color:var(--accent);font-weight:800;" id="choiceTitle">Choose your approach</div>
+      <div class="choice-grid" id="choiceGrid"></div>
+    </div>
+
+    <!-- Enhanced Mantra puzzle -->
+    <div class="choices" id="puzzle" style="min-width:560px">
+      <div style="text-align:center;margin-bottom:10px;color:var(--accent);font-weight:800;">Align the glyphs to feel the verse</div>
+      
+      <!-- Hymn Display Section -->
+      <div class="hymn-display">
+        <div class="hymn-title" id="currentHymnTitle">Hymn 1.1: Agni</div>
+        <div class="hymn-sanskrit" id="currentHymnSanskrit">agnim īḷe purohitam yajñasya devam ṛtvijam | hotāraṃ ratnadhātamam ||</div>
+        <div class="hymn-translation" id="currentHymnTranslation">I laud Agni, the chosen Priest, God, minister of sacrifice...</div>
+        <button class="btn" id="showMeaningBtn" style="margin-top:8px">Show Detailed Meaning</button>
+      </div>
+      
+      <div class="mantra-puzzle" id="mantraGrid"></div>
+      
+      <div class="puzzle-hint" id="puzzleHint">Select the glyphs in the correct order to form the mantra</div>
+      
+      <div class="puzzle-controls">
+        <button class="btn hint-btn" id="puzzleHintBtn">Get Hint</button>
+        <button class="btn" id="puzzleSubmit">Submit</button>
+        <button class="btn skip-btn" id="puzzleSkipBtn">Skip Puzzle</button>
+      </div>
+    </div>
+
+    <!-- Meaning Modal -->
+    <div class="modal" id="meaningModal">
+      <div class="panel meaning-modal">
+        <h3 id="meaningTitle">Hymn 1.1: Agni</h3>
+        <div class="meaning-content">
+          <div class="meaning-section">
+            <h4>Sanskrit</h4>
+            <div id="meaningSanskrit" style="font-style: italic; line-height: 1.6;"></div>
+          </div>
+          
+          <div class="meaning-section">
+            <h4>Translation</h4>
+            <div id="meaningTranslation" style="line-height: 1.5;"></div>
+          </div>
+          
+          <div class="meaning-section">
+            <h4>Explanation</h4>
+            <div id="meaningExplanation" style="line-height: 1.5;"></div>
+          </div>
+          
+          <div class="meaning-section">
+            <h4>Deities</h4>
+            <div id="meaningDeities" class="deity-tags"></div>
+          </div>
+          
+          <div class="meaning-section">
+            <h4>Themes</h4>
+            <div id="meaningThemes" class="theme-tags"></div>
+          </div>
+        </div>
+        
+        <div style="text-align:right;margin-top:15px">
+          <button class="btn" onclick="closeMeaningModal()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- HUD -->
+    <div class="hud" id="hud">
+      <div class="line">Heart: <span id="heart">0</span> &nbsp;•&nbsp; Mind: <span id="mind">0</span> &nbsp;•&nbsp; Balance: <span id="balance">0</span></div>
+      <div style="font-size:0.85rem;margin-top:6px">Mandala: <span id="mandalaName">—</span></div>
+    </div>
+    
+    <!-- Hymn Info HUD -->
+    <div class="hymn-info" id="hymnInfo">
+      <div class="line">Hymn: <span id="currentHymnIndex">1.1</span></div>
+      <div class="mantra" id="currentMantra">Agniṁ īḷe purohitaṁ</div>
+    </div>
+
+    <!-- FABs -->
+    <button class="fab" id="menuBtn" title="Mandala Menu">🌌</button>
+    <button class="fab" id="codexBtn" title="Codex" style="right:18px;bottom:86px">📜</button>
+    <button class="fab" id="saveBtn" title="Save" style="right:18px;bottom:154px">💾</button>
+
+    <!-- Modals: Menu, Codex -->
+    <div class="modal" id="menuModal"><div class="panel">
+      <h3>Ṛta — Mandala Menu</h3>
+      <div style="margin-top:10px">Choose your destination (Mandala I is unlocked):</div>
+      <div class="grid" id="menuGrid" style="margin-top:12px"></div>
+      <div style="text-align:right;margin-top:12px"><button class="btn" onclick="closeMenu()">Close</button></div>
+    </div></div>
+
+    <div class="modal" id="codexModal"><div class="panel">
+      <h3>Codex of Ṛta</h3>
+      <div id="codexEntries" style="margin-top:10px">No entries yet. Explore Mandala I to unlock hymns and notes.</div>
+      <div style="text-align:right;margin-top:12px"><button class="btn" onclick="closeCodex()">Close</button></div>
+    </div></div>
+
+    <!-- toast -->
+    <div id="toast"></div>
+
+  </div>
+
+<script>
+/*
+  Enhanced VN merged file
+  - Cinematic intro with visual storytelling: evolving backgrounds (Unsplash images), typewriter text pacing, progressive awakening.
+  - Character reveals: Apsara and Gandharva appear with timing and narrative logic.
+  - Player questions: early choices define path/affinity (Heart / Mind / Unity).
+  - Immersive transition: the world "ignites" into Mandala 1 (Agni Realm).
+  - Integrated with preserved Mandala I gameplay (rituals, mantra puzzle, codex).
+  - Save/load + autosave preserved.
+  - Enhanced mantra puzzle with hints, skip option, and detailed hymn meaning display.
+  - Player sprite only appears in intro and important scenes.
+  - Added breathing animation, emotion effects, and speaker highlighting.
+  - Added hymn info HUD showing current hymn index and mantra.
+*/
+
+/* ---------- STATE ---------- */
+const state = {
+  currentScene: 'intro_cinematic', // controls higher-level flow
+  mandala: 0,
+  heart: 0,
+  mind: 0,
+  unity: 0, // Added for Unity affinity
+  codex: {},
+  gallery: {},
+  autosaveKey: 'rta_autosave_v1',
+  saveKey: 'rta_save_v1',
+  currentHymn: "1.1",
+  currentMantra: "Agniṁ īḷe purohitaṁ",
+  importantScenes: ['intro_cinematic', 'mandala1_conclude', 'mandala1_deep_question']
+};
+
+/* ---------- DOM ---------- */
+const bgSilence = document.getElementById('bgSilence');
+const bgWhisper = document.getElementById('bgWhisper');
+const bgAwaken = document.getElementById('bgAwaken');
+const bgIgnite = document.getElementById('bgIgnite');
+const bgAgni = document.getElementById('bgAgni');
+
+const player = document.getElementById('player');
+const apsara = document.getElementById('apsara');
+const gandharva = document.getElementById('gandharva');
+
+const speaker = document.getElementById('speaker');
+const textBox = document.getElementById('dialogueText');
+const nextBtn = document.getElementById('nextBtn');
+const backBtn = document.getElementById('backBtn');
+const choicesEl = document.getElementById('choices');
+const choiceTitle = document.getElementById('choiceTitle');
+const choiceGrid = document.getElementById('choiceGrid');
+const puzzleEl = document.getElementById('puzzle');
+const mantraGrid = document.getElementById('mantraGrid');
+const puzzleSubmit = document.getElementById('puzzleSubmit');
+const puzzleHintBtn = document.getElementById('puzzleHintBtn');
+const puzzleSkipBtn = document.getElementById('puzzleSkipBtn');
+const puzzleHint = document.getElementById('puzzleHint');
+const showMeaningBtn = document.getElementById('showMeaningBtn');
+
+const hudHeart = document.getElementById('heart');
+const hudMind = document.getElementById('mind');
+const hudBalance = document.getElementById('balance');
+const mandalaName = document.getElementById('mandalaName');
+
+// Hymn Info HUD
+const currentHymnIndex = document.getElementById('currentHymnIndex');
+const currentMantra = document.getElementById('currentMantra');
+
+const menuBtn = document.getElementById('menuBtn');
+const codexBtn = document.getElementById('codexBtn');
+const saveBtn = document.getElementById('saveBtn');
+const menuModal = document.getElementById('menuModal');
+const codexModal = document.getElementById('codexModal');
+const meaningModal = document.getElementById('meaningModal');
+const menuGrid = document.getElementById('menuGrid');
+const codexEntries = document.getElementById('codexEntries');
+const toast = document.getElementById('toast');
+
+const cineEls = [
+  document.getElementById('cine1'),
+  document.getElementById('cine2'),
+  document.getElementById('cine3'),
+  document.getElementById('cine4')
+];
+
+/* ---------- HELPERS ---------- */
+function show(el){ el.classList.add('show'); el.style.display = ''; }
+function hide(el){ el.classList.remove('show'); el.style.display = 'none'; }
+function toastMsg(msg, t=1600){ toast.style.display='block'; toast.textContent=msg; setTimeout(()=>toast.style.display='none',t); }
+function updateHUD(){ 
+  hudHeart.textContent = state.heart; 
+  hudMind.textContent = state.mind; 
+  hudBalance.textContent = state.unity; 
+  mandalaName.textContent = state.mandala ? `Mandala ${state.mandala}` : '—'; 
+}
+function updateHymnInfo() {
+  currentHymnIndex.textContent = state.currentHymn;
+  currentMantra.textContent = state.currentMantra;
+}
+function saveAuto(){ try{ localStorage.setItem(state.autosaveKey, JSON.stringify(state)); }catch(e){} }
+
+/* ---------- SPRITE / BG helpers ---------- */
+function showSprite(el){ 
+  el.classList.add('show'); 
+  el.style.opacity = 1; 
+  el.style.visibility = 'visible';
+  el.classList.add('breathing');
+}
+function hideSprite(el){ 
+  el.classList.remove('show'); 
+  el.style.opacity = 0; 
+  el.style.visibility = 'hidden';
+  el.classList.remove('breathing');
+}
+function switchBG(bgEl){ [bgSilence,bgWhisper,bgAwaken,bgIgnite,bgAgni].forEach(b=>b.classList.remove('show')); setTimeout(()=> bgEl.classList.add('show'), 80); }
+function animateApsaraGlow(){ apsara.style.transform = 'translateX(-50%) scale(1.03)'; setTimeout(()=> apsara.style.transform = 'translateX(-50%) scale(1)', 700); }
+function animateGandharvaWave(){ gandharva.style.transform = 'translateX(0) scale(1.03)'; setTimeout(()=> gandharva.style.transform = 'translateX(0) scale(1)', 700); }
+
+/* ---------- Sprite Effects ---------- */
+function setSpriteEmotion(sprite, emotion) {
+  // Remove all emotion classes
+  sprite.classList.remove('happy', 'serious', 'thoughtful');
+  
+  // Add the requested emotion class
+  if (emotion) {
+    sprite.classList.add(emotion);
+  }
+}
+
+function highlightSpeaker(speakerName) {
+  // Remove speaking class from all sprites
+  player.classList.remove('speaking');
+  apsara.classList.remove('speaking');
+  gandharva.classList.remove('speaking');
+  
+  // Add speaking class to the current speaker
+  if (speakerName === 'Player' || speakerName === '???') {
+    player.classList.add('speaking');
+  } else if (speakerName === 'Apsara') {
+    apsara.classList.add('speaking');
+  } else if (speakerName === 'Gandharva') {
+    gandharva.classList.add('speaking');
+  }
+  
+  // Play sound effect (simulated)
+  playCharacterSFX(speakerName);
+}
+
+function playCharacterSFX(character) {
+  // In a real implementation, this would play actual sound files
+  console.log(`Playing SFX for ${character}`);
+  
+  // For demonstration, we'll just log to console
+  // In a real game, you would use something like:
+  // const audio = new Audio(`sounds/${character.toLowerCase()}_speak.mp3`);
+  // audio.play();
+}
+
+/* ---------- Typewriter Effect ---------- */
+function setSpeaker(name) {
+  speaker.textContent = name ? `— ${name}` : '—';
+  highlightSpeaker(name);
+}
+
+function typeText(txt, callback) {
+  textBox.textContent = "";
+  let i = 0;
+  const interval = setInterval(() => {
+    if (i < txt.length) {
+      textBox.textContent += txt[i];
+      i++;
+    } else {
+      clearInterval(interval);
+      if (callback) callback();
+    }
+  }, 35);
+}
+
+/* ---------- SCENES (Enhanced with cinematic from second code) ---------- */
+const scenes = {
+  // Enhanced intro_cinematic with evolving bgs, progressive awakening, character reveals
+  intro_cinematic: [
+    { who:'', text:'…', bg: 'bgSilence', action: () => { switchBG(bgSilence); showSprite(player); } },
+    { who:'Narrator', text:'In the beginning, there was no earth, no sky.\nOnly silence — breathing light within itself.', action: () => { switchBG(bgWhisper); showCinematicLine(0); } },
+    { who:'Narrator', text:'From that silence came a whisper.\nFrom whisper — flame.\nAnd from flame — the hymn.', action: () => showCinematicLine(1) },
+    { who:'Narrator', text:'You awaken where verses are born — the Ether of Ṛta.\nYour memory is smoke. Your name, unknown.', action: () => { switchBG(bgAwaken); showCinematicLine(2); } },
+    { who:'???', text:'A voice sings through the light — delicate, ancient.', action: () => { switchBG(bgAwaken); showCinematicLine(3); showSprite(apsara); setSpriteEmotion(apsara, 'thoughtful'); } }, // Character reveal: Apsara
+    { who:'Apsara', text:'"Seeker of Flame... your heart still remembers."', action: () => setSpriteEmotion(apsara, 'happy') },
+    { who:'Gandharva', text:'"And your mind still listens. You are between knowing and being."', action: () => { showSprite(gandharva); setSpriteEmotion(gandharva, 'serious'); } }, // Character reveal: Gandharva
+    { who:'Apsara', text:'"Before we guide you through the Mandalas, tell us…"', action: () => { setSpriteEmotion(apsara, 'thoughtful'); showIntroChoice(); } } // Early player question for affinity
+  ],
+
+  // Mandala I with immersive transition
+  mandala1_opening: [
+    { who:'Narrator', text:'The light around you becomes flame — dancing, alive.\nYou step into the first Mandala — the Realm of Agni.', action: () => { switchBG(bgAgni); hideSprite(player); showSprite(apsara); showSprite(gandharva); } }, // Immersive ignition transition
+    { who:'Apsara', text:'"Agni — the divine fire, priest of the sacrifice, messenger between realms."', action: () => setSpriteEmotion(apsara, 'serious') },
+    { who:'Gandharva', text:'"The hymn begins not with worship, but awakening."', action: () => setSpriteEmotion(gandharva, 'thoughtful') },
+    { who:'Apsara', text:'"The first verse calls: *Agniṁ īḷe purohitaṁ yajñasya devaṁ ṛtvijam.*"', action: () => { setSpriteEmotion(apsara, 'happy'); state.currentMantra = "Agniṁ īḷe purohitaṁ"; updateHymnInfo(); } },
+    { who:'Gandharva', text:'"Praise the Fire — the Priest — the Divine who kindles creation."\n"Feel it. Do you perceive the heat or the harmony?"', action: () => { setSpriteEmotion(gandharva, 'thoughtful'); showMandala1Approach(); } }
+  ],
+
+  mandala1_scene_ritual: [
+    { who:'Narration', text:'You step among low altars. The smoke writes patterns in the air.' },
+    { who:'Apsara', text:'This is the place of offering. Agni carries our words to the unseen.', action: () => { switchBG(bgIgnite); setSpriteEmotion(apsara, 'serious'); } },
+    { who:'Gandharva', text:'Watch how the priest places fuel: intention first, motion second. The form matters.', action: () => setSpriteEmotion(gandharva, 'thoughtful') },
+    { who:'Apsara', text:'Place your hand on the hearth and listen.' , action: () => { setSpriteEmotion(apsara, 'happy'); showRitualChoice(); } }
+  ],
+
+  mandala1_scene_soma: [
+    { who:'Gandharva', text:'Soma is not yet here; but the language of ritual approaches the sacred. Each verse is a key.', action: () => setSpriteEmotion(gandharva, 'thoughtful') },
+    { who:'Apsara', text:'You may try to arrange the glyphs — an exercise in feeling the meter.', action: () => { setSpriteEmotion(apsara, 'happy'); startMantraPuzzle(); } }
+  ],
+
+  mandala1_reflection: [
+    { who:'Narrator', text:'The flame responds. The Codex glows faintly.\nYou have understood your first verse.', action: () => { addCodexEntry('mandala1_basic'); setSpriteEmotion(apsara, 'happy'); setSpriteEmotion(gandharva, 'happy'); } },
+    { who:'Apsara & Gandharva', text:'You have taken the first flame inward. The Codex remembers this step.', action: () => { setSpriteEmotion(apsara, 'thoughtful'); setSpriteEmotion(gandharva, 'thoughtful'); } },
+    { who:'Gandharva', text:'Remember: understanding is not theft. It is a returned offering.', action: () => { setSpriteEmotion(gandharva, 'serious'); saveAuto(); } },
+    { who:'Apsara', text:'Choose to return to the menu, re-experience the ritual, or continue deeper into the Mandala.', action: () => { setSpriteEmotion(apsara, 'happy'); showPostMandalaChoices(); } }
+  ],
+
+  mandala1_deep_question: [
+    { who:'Apsara', text:'Why do you ask? Is it fear or longing that pulls at you?', action: () => { setSpriteEmotion(apsara, 'serious'); showSprite(player); } },
+    { who:'Player', text:'(You answer from your heart or mind.)', action: () => showDeepAnswerChoices() }
+  ],
+
+  mandala1_conclude: [
+    { who:'Gandharva', text:'We close the first circle. Carry the ember with care.', action: () => { setSpriteEmotion(gandharva, 'serious'); showSprite(player); } },
+    { who:'Apsara', text:'"You walk the Path of Flame now, Seeker. Many verses await."\nWhen you return, the flame will glow more clearly. Until then, rest in its light.' , action: () => { setSpriteEmotion(apsara, 'happy'); addCodexEntry('mandala1_conclusion'); saveAuto(); } }
+  ]
+};
+
+/* ---------- Cinematic helpers ---------- */
+function showCinematicLine(i){
+  cineEls.forEach(e=>e.classList.remove('show'));
+  setTimeout(()=> cineEls[i].classList.add('show'), 80);
+}
+
+/* ---------- Main scene engine (Enhanced with Typewriter and BG) ---------- */
+let currentStepIndex = 0;
+let currentSceneArray = scenes.intro_cinematic;
+
+function enterScene(sceneKey){
+  if (!scenes[sceneKey]) return console.warn('Missing scene:', sceneKey);
+  currentSceneArray = scenes[sceneKey];
+  currentStepIndex = 0;
+  state.currentScene = sceneKey;
+  
+  // Handle player visibility based on scene importance
+  if (state.importantScenes.includes(sceneKey)) {
+    showSprite(player);
+  } else {
+    hideSprite(player);
+  }
+  
+  runStep();
+}
+
+function runStep(){
+  const step = currentSceneArray[currentStepIndex];
+  if (!step){
+    onSceneEnd(state.currentScene);
+    return;
+  }
+  // update UI with typewriter
+  setSpeaker(step.who);
+  typeText(step.text, () => {
+    if (step.action) step.action();
+    nextBtn.disabled = false;
+  });
+}
+
+/* Next / Back */
+nextBtn.onclick = ()=>{
+  if (choicesEl.classList.contains('show') || puzzleEl.classList.contains('show')) return;
+  currentStepIndex++;
+  if (currentStepIndex < currentSceneArray.length) runStep();
+  else onSceneEnd(state.currentScene);
+  nextBtn.disabled = true;
+};
+backBtn.onclick = ()=>{
+  if (state.currentScene.startsWith('mandala1')) {
+    enterScene('mandala1_reflection');
+  } else {
+    enterScene('intro_cinematic');
+  }
+};
+
+/* ---------- Scene end routing ---------- */
+function onSceneEnd(sceneKey){
+  if (sceneKey === 'intro_cinematic'){
+    state.mandala = 1;
+    updateHUD();
+    showSprite(apsara); showSprite(gandharva);
+    setTimeout(()=> enterScene('mandala1_opening'), 700);
+    return;
+  }
+  if (sceneKey === 'mandala1_opening'){
+    enterScene('mandala1_scene_ritual');
+    return;
+  }
+  if (sceneKey === 'mandala1_scene_ritual'){
+    enterScene('mandala1_scene_soma');
+    return;
+  }
+  if (sceneKey === 'mandala1_scene_soma'){
+    enterScene('mandala1_reflection');
+    return;
+  }
+  if (sceneKey.startsWith('mandala1')) {
+    showPostMandalaChoices();
+    return;
+  }
+  // default: open menu
+  showMenu();
+}
+
+/* ---------- Choices & UI (Enhanced with Unity) ---------- */
+
+function showIntroChoice(){
+  choicesEl.classList.add('show');
+  choiceTitle.textContent = "Before we guide you through the Mandalas, tell us…";
+  choiceGrid.innerHTML = '';
+  addChoice('I seek to feel — to understand through wonder. (Heart)', () => { applyAffinity('heart', 5); choicesEl.classList.remove('show'); enterScene('mandala1_opening'); });
+  addChoice('I seek to know — to understand through thought. (Mind)', () => { applyAffinity('mind', 5); choicesEl.classList.remove('show'); enterScene('mandala1_opening'); });
+  addChoice('I seek balance — both song and silence. (Unity)', () => { applyAffinity('unity', 5); choicesEl.classList.remove('show'); enterScene('mandala1_opening'); });
+}
+
+function showMandala1Approach(){
+  choicesEl.classList.add('show');
+  choiceTitle.textContent = "How will you approach this hymn?";
+  choiceGrid.innerHTML = '';
+  addChoice('The warmth within me rises — I feel creation. (Heart)', () => { applyAffinity('heart', 10); addCodexEntry('mandala1_approach_heart'); choicesEl.classList.remove('show'); enterScene('mandala1_scene_ritual'); });
+  addChoice('The words align — I see structure and order. (Mind)', () => { applyAffinity('mind', 10); addCodexEntry('mandala1_approach_mind'); choicesEl.classList.remove('show'); enterScene('mandala1_scene_ritual'); });
+  addChoice('Both — harmony in heat and form. (Unity)', () => { applyAffinity('unity', 10); addCodexEntry('mandala1_approach_both'); choicesEl.classList.remove('show'); enterScene('mandala1_scene_ritual'); });
+}
+
+function showRitualChoice(){
+  choicesEl.classList.add('show');
+  choiceTitle.textContent = "You stand at the hearth. What do you offer?";
+  choiceGrid.innerHTML = '';
+  addChoice('A prayer from the chest (Heart)', () => { applyAffinity('heart',8); addCodexEntry('ritual_prayer'); choicesEl.classList.remove('show'); enterScene('mandala1_scene_soma'); });
+  addChoice('A precise spoken verse (Mind)', () => { applyAffinity('mind',8); addCodexEntry('ritual_verse'); choicesEl.classList.remove('show'); enterScene('mandala1_scene_soma'); });
+  addChoice('A silent offering (Unity)', () => { applyAffinity('unity',8); addCodexEntry('ritual_silence'); choicesEl.classList.remove('show'); enterScene('mandala1_scene_soma'); });
+}
+
+function showPostMandalaChoices(){
+  choicesEl.classList.add('show');
+  choiceTitle.textContent = "Mandala I complete: what will you do?";
+  choiceGrid.innerHTML = '';
+  addChoice('Return to Mandala Menu', () => { choicesEl.classList.remove('show'); showMenu(); });
+  addChoice('Replay this Mandala (deeper)', () => { choicesEl.classList.remove('show'); enterScene('mandala1_opening'); });
+  addChoice('Study Codex entries', () => { choicesEl.classList.remove('show'); openCodex(); });
+}
+
+function showDeepAnswerChoices(){
+  choicesEl.classList.add('show');
+  choiceTitle.textContent = "Answer from where you feel strongest:";
+  choiceGrid.innerHTML = '';
+  addChoice('I feel longing (Heart)', () => { applyAffinity('heart',12); addCodexEntry('deep_longing'); choicesEl.classList.remove('show'); enterScene('mandala1_conclude'); });
+  addChoice('I reason through fear (Mind)', () => { applyAffinity('mind',12); addCodexEntry('deep_fear'); choicesEl.classList.remove('show'); enterScene('mandala1_conclude'); });
+  addChoice('Both — I want to understand why I long (Unity)', () => { applyAffinity('unity',12); addCodexEntry('deep_both'); choicesEl.classList.remove('show'); enterScene('mandala1_conclude'); });
+}
+
+function addChoice(label, cb){
+  const d = document.createElement('div');
+  d.className = 'choice';
+  d.textContent = label;
+  d.onclick = cb;
+  choiceGrid.appendChild(d);
+}
+
+/* ---------- Affinity & Codex (Enhanced with Unity) ---------- */
+function applyAffinity(type, amount){
+  if (type === 'heart') state.heart += amount;
+  if (type === 'mind') state.mind += amount;
+  if (type === 'unity') state.unity += amount;
+  updateHUD();
+  saveAuto();
+}
+
+/* codex entries pool */
+function addCodexEntry(id){
+  const entries = {
+    'mandala1_basic': { title:'Mandala I — Agni (Intro)', text:'Agni as the connecting flame: messenger between earth and sky. Approach with offering.' },
+    'mandala1_conclusion': { title:'Mandala I — Reflection', text:'The flame you carry burns within: heat as remembrance, warmth as devotion.'},
+    'mandala1_approach_heart': { title:'Mandala I — Heart Note', text:'Feeling the hymn reveals its relational power: fire warms, remembers, binds.'},
+    'mandala1_approach_mind': { title:'Mandala I — Mind Note', text:'The hymn as structure: meter, sound, and function in ritual.'},
+    'mandala1_approach_both': { title:'Mandala I — Balanced Note', text:'Union of form and feeling — Ṛta appears where both meet.'},
+    'ritual_prayer': { title:'Ritual — Prayer', text:'An offering that names the desire; a flame that sends words upward.'},
+    'ritual_verse': { title:'Ritual — Verse', text:'Structured sound shapes the passage between worlds.'},
+    'ritual_silence': { title:'Ritual — Silence', text:'Stillness can be an offering; attention itself becomes the hymn.'},
+    'deep_longing': { title:'Deep — Longing', text:'The Seeker who feels recognizes the flame as hearth of belonging.'},
+    'deep_fear': { title:'Deep — Fear', text:'The Seeker who reasons names the unknown to keep it near.'},
+    'deep_both': { title:'Deep — Both', text:'Integration: the final step to see Ṛta.'}
+  };
+  if (entries[id]) state.codex[id] = entries[id];
+  updateCodexPanel();
+  saveAuto();
+}
+
+function updateCodexPanel(){
+  codexEntries.innerHTML = '';
+  const keys = Object.keys(state.codex);
+  if (!keys.length){
+    codexEntries.innerHTML = '<div>No entries yet. Return to Mandala I to unlock hymns and notes.</div>';
+    return;
+  }
+  keys.forEach(k=>{
+    const e = state.codex[k];
+    const div = document.createElement('div');
+    div.className = 'codex-entry';
+    div.innerHTML = `<strong style="color:var(--accent)">${e.title}</strong><div style="margin-top:6px;font-size:0.98rem">${e.text}</div>`;
+    codexEntries.appendChild(div);
+  });
+}
+
+/* ---------- Hymn Data ---------- */
+const hymnData = {
+  "mandalas": {
+    "1": {
+      "title": "Whispering Void (191 hymns: Creation, invocations to Agni/Indra/Varuna)",
+      "hymns": {
+        "1.1": {
+          "sanskrit": "agnim īḷe purohitam yajñasya devam ṛtvijam | hotāraṃ ratnadhātamam ||",
+          "translation": "I laud Agni, the chosen Priest, God, minister of sacrifice, / The herald, lavishest of wealth. / Wise master of the sacrifice, / The true, the universal God. / All hail to this our sacrifice! / May he, the bright, the wondrous God, / Accept our offering as it is.",
+          "explanation": "The Rigveda's opening hymn invokes Agni as the ritual fire and divine messenger, bridging humans and gods in yajna (sacrifice); it sets the tone for Vedic devotion, like lighting a candle to connect with the universe's energy.",
+          "deities": ["Agni"],
+          "themes": ["ritual", "invocation", "creation"]
+        },
+        "1.2": {
+          "sanskrit": "vāyoṃ śūcīnā śucayo na ā gahi | śūcībhiraśvasā sajoṣāsaḥ ||",
+          "translation": "Come, Vayu, pure, to the pure, / With pure steeds, pure, come to us, / Come with thy thousand, come with thy ten thousand. / Come, Vayu, to the gifts we offer.",
+          "explanation": "Praise to Vayu (wind god) for his swift, purifying presence in rituals; emphasizes purity and speed in divine approach, akin to fresh air clearing mental fog in modern mindfulness.",
+          "deities": ["Vayu"],
+          "themes": ["invocation", "purity", "wind"]
+        },
+        "1.3": {
+          "sanskrit": "aśvinaṃ vājinīvasū devāv adya havāmaha | yuvor havyaṁ ghṛtācī ||",
+          "translation": "We call today the Ashvins, rich in steeds, / Gods whose offering is anointed with ghee.",
+          "explanation": "Invocation to the Ashvins, divine physicians and bringers of healing; represents early recognition of medicine's divine aspect in restoring wholeness.",
+          "deities": ["Ashvins"],
+          "themes": ["healing", "invocation", "duality"]
+        },
+        "1.4": {
+          "sanskrit": "indraṃ mitraṃ varuṇam agnim āhur atho divyaḥ sa suparṇo gharutmān | ekaṁ sad viprā bahudhā vadanty agniṁ yamaṁ mātariśvānam āhuḥ ||",
+          "translation": "They call him Indra, Mitra, Varuna, Agni, / And he is heavenly nobly-winged Garutman. / To what is One, sages give many a title: / They call it Agni, Yama, Matarisvan.",
+          "explanation": "Early philosophical insight recognizing unity in divine diversity; prefigures the Upanishadic concept of Brahman as the singular reality behind multiple manifestations.",
+          "deities": ["Indra", "Mitra", "Varuna", "Agni", "Yama"],
+          "themes": ["philosophy", "unity", "divine_names"]
+        }
+      }
+    }
+  }
+};
+
+// Current hymn being studied
+let currentHymn = "1.1";
+
+/* ---------- Enhanced Mantra Puzzle ---------- */
+const glyphPool = ['AN', 'GI', 'VA', 'SA', 'NA', 'RI'];
+let selectedGlyphs = [];
+let hintCount = 0;
+
+function startMantraPuzzle(){
+  puzzleEl.classList.add('show');
+  
+  // Display current hymn information
+  const hymn = hymnData.mandalas["1"].hymns[currentHymn];
+  document.getElementById('currentHymnTitle').textContent = `Hymn ${currentHymn}: ${hymn.deities[0]}`;
+  document.getElementById('currentHymnSanskrit').textContent = hymn.sanskrit;
+  document.getElementById('currentHymnTranslation').textContent = hymn.translation.substring(0, 80) + '...';
+  
+  // Setup meaning button
+  showMeaningBtn.onclick = showMeaningModal;
+  
+  // Setup hint button
+  puzzleHintBtn.onclick = provideHint;
+  
+  // Setup skip button
+  puzzleSkipBtn.onclick = skipPuzzle;
+  
+  // Reset puzzle state
+  const target = ['AN','GI','VA','SA'];
+  const display = shuffleArray(glyphPool.slice()).slice(0,6);
+  target.forEach(g=> { if (!display.includes(g)) display.push(g); });
+  mantraGrid.innerHTML = '';
+  selectedGlyphs = [];
+  hintCount = 0;
+  puzzleHint.textContent = 'Select the glyphs in the correct order to form the mantra';
+  
+  display.forEach(g=>{
+    const el = document.createElement('div');
+    el.className = 'glyph';
+    el.textContent = g;
+    el.onclick = () => {
+      el.classList.toggle('selected');
+      if (el.classList.contains('selected')) {
+        selectedGlyphs.push(g);
+      } else {
+        selectedGlyphs = selectedGlyphs.filter(x=>x!==g);
+      }
+    };
+    mantraGrid.appendChild(el);
+  });
+
+  puzzleSubmit.onclick = checkPuzzleSolution;
+}
+
+function provideHint() {
+  const target = ['AN','GI','VA','SA'];
+  
+  if (hintCount < target.length) {
+    const nextGlyph = target[hintCount];
+    puzzleHint.textContent = `Hint: The next glyph is "${nextGlyph}"`;
+    
+    // Highlight the correct glyph
+    const glyphs = document.querySelectorAll('.glyph');
+    glyphs.forEach(glyph => {
+      if (glyph.textContent === nextGlyph) {
+        glyph.style.border = '2px solid rgba(255, 215, 0, 0.7)';
+        glyph.style.boxShadow = '0 0 10px rgba(255, 215, 0, 0.5)';
+      }
+    });
+    
+    hintCount++;
+  } else {
+    puzzleHint.textContent = 'No more hints available. The sequence is: AN → GI → VA → SA';
+  }
+}
+
+function skipPuzzle() {
+  puzzleEl.classList.remove('show');
+  toastMsg('Puzzle skipped. Continuing with the story...');
+  setTimeout(() => enterScene('mandala1_reflection'), 900);
+}
+
+function checkPuzzleSolution() {
+  const chosen = selectedGlyphs.slice(0,4);
+  const correct = JSON.stringify(chosen) === JSON.stringify(['AN','GI','VA','SA']);
+  
+  if (correct) {
+    applyAffinity('heart', 6);
+    applyAffinity('mind', 6);
+    addCodexEntry('mandala1_basic');
+    puzzleEl.classList.remove('show');
+    toastMsg('You felt the meter — a codex entry unlocked.');
+    setTimeout(() => enterScene('mandala1_reflection'), 900);
+  } else {
+    puzzleHint.textContent = 'Incorrect sequence. Try again or use hints for assistance.';
+    puzzleHint.style.color = 'rgba(255, 100, 100, 0.9)';
+    
+    // Reset color after a delay
+    setTimeout(() => {
+      puzzleHint.style.color = 'rgba(255, 255, 255, 0.8)';
+    }, 3000);
+  }
+}
+
+function showMeaningModal() {
+  const hymn = hymnData.mandalas["1"].hymns[currentHymn];
+  
+  // Populate modal with hymn details
+  document.getElementById('meaningTitle').textContent = `Hymn ${currentHymn}: ${hymn.deities[0]}`;
+  document.getElementById('meaningSanskrit').textContent = hymn.sanskrit;
+  document.getElementById('meaningTranslation').textContent = hymn.translation;
+  document.getElementById('meaningExplanation').textContent = hymn.explanation;
+  
+  // Populate deities
+  const deitiesContainer = document.getElementById('meaningDeities');
+  deitiesContainer.innerHTML = '';
+  hymn.deities.forEach(deity => {
+    const tag = document.createElement('div');
+    tag.className = 'deity-tag';
+    tag.textContent = deity;
+    deitiesContainer.appendChild(tag);
+  });
+  
+  // Populate themes
+  const themesContainer = document.getElementById('meaningThemes');
+  themesContainer.innerHTML = '';
+  hymn.themes.forEach(theme => {
+    const tag = document.createElement('div');
+    tag.className = 'theme-tag';
+    tag.textContent = theme;
+    themesContainer.appendChild(tag);
+  });
+  
+  // Show modal
+  meaningModal.classList.add('show');
+}
+
+function closeMeaningModal() {
+  meaningModal.classList.remove('show');
+}
+
+/* ---------- Menu & Save/Load (preserved) ---------- */
+menuBtn.onclick = ()=> showMenu();
+codexBtn.onclick = ()=> { updateCodexPanel(); openCodex(); };
+saveBtn.onclick = ()=> doSave();
+
+function showMenu(){ menuModal.classList.add('show'); buildMenuGrid(); }
+function closeMenu(){ menuModal.classList.remove('show'); }
+function openCodex(){ codexModal.classList.add('show'); }
+function closeCodex(){ codexModal.classList.remove('show'); }
+
+function buildMenuGrid(){
+  menuGrid.innerHTML = '';
+  const entries = [
+    { id:'mandala1', label:'Mandala I — Agni (Unlocked)', action: ()=> { closeMenu(); enterScene('mandala1_opening'); } },
+    { id:'mandala10', label:'Mandala X — Creation (Locked)', action: ()=> { toastMsg('Locked — progress through Mandalas to unlock.'); } }
+  ];
+  entries.forEach(e=>{
+    const d = document.createElement('div');
+    d.className = 'btn';
+    d.style.padding = '12px';
+    d.textContent = e.label;
+    d.onclick = e.action;
+    menuGrid.appendChild(d);
+  });
+}
+
+/* Save & Load */
+function doSave(){
+  try{
+    localStorage.setItem(state.saveKey, JSON.stringify(state));
+    toastMsg('Game saved');
+  }catch(e){ toastMsg('Save failed'); }
+}
+function doLoad(){
+  try{
+    const raw = localStorage.getItem(state.saveKey);
+    if (!raw) { toastMsg('No saved game found'); return; }
+    const parsed = JSON.parse(raw);
+    Object.assign(state, parsed);
+    updateHUD();
+    updateHymnInfo();
+    updateCodexPanel();
+    toastMsg('Game loaded');
+  }catch(e){ toastMsg('Load failed'); }
+}
+
+/* ---------- Utilities ---------- */
+function shuffleArray(a){ for (let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]] } return a; }
+
+/* ---------- Init & cinematic orchestration (Progressive awakening) ---------- */
+function init(){
+  updateHUD();
+  updateHymnInfo();
+  // prepare cinematic lines hidden
+  cineEls.forEach(e=>e.classList.remove('show'));
+  hideSprite(player); hideSprite(apsara); hideSprite(gandharva);
+  // Progressive reveal: start with silence bg, typewriter in engine will handle text
+  switchBG(bgSilence);
+  // Enter cinematic scene to start typewriter and bg evolution
+  enterScene('intro_cinematic');
+
+  // attempt autosave restoration silently
+  try{
+    const raw = localStorage.getItem(state.autosaveKey);
+    if (raw){
+      const parsed = JSON.parse(raw);
+      if (parsed && parsed.mandala){
+        Object.assign(state, parsed);
+        updateHUD();
+        updateHymnInfo();
+        updateCodexPanel();
+      }
+    }
+  }catch(e){}
+}
+
+/* ---------- Expose some functions for debugging/dev ---------- */
+window.doSave = doSave;
+window.doLoad = doLoad;
+window.enterScene = enterScene;
+window.startMantraPuzzle = startMantraPuzzle;
+window.closeMeaningModal = closeMeaningModal;
+
+/* ---------- Start ---------- */
+window.onload = ()=>{
+  init();
+};
+</script>
+</body>
 </html>
