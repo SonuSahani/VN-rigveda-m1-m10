@@ -1,0 +1,1352 @@
+{
+    "mandalas": {
+      "1": {
+        "title": "Whispering Void (191 hymns: Creation, invocations to Agni/Indra/Varuna)",
+        "hymns": {
+          "1.1": {
+            "sanskrit": "agnim īḷe purohitam yajñasya devam ṛtvijam | hotāraṃ ratnadhātamam ||",
+            "translation": "I laud Agni, the chosen Priest, God, minister of sacrifice, / The herald, lavishest of wealth. / Wise master of the sacrifice, / The true, the universal God. / All hail to this our sacrifice! / May he, the bright, the wondrous God, / Accept our offering as it is.",
+            "explanation": "The Rigveda's opening hymn invokes Agni as the ritual fire and divine messenger, bridging humans and gods in yajna (sacrifice); it sets the tone for Vedic devotion, like lighting a candle to connect with the universe's energy.",
+            "deities": ["Agni"],
+            "themes": ["ritual", "invocation", "creation"]
+          },
+          "1.2": {
+            "sanskrit": "vāyoṃ śūcīnā śucayo na ā gahi | śūcībhiraśvasā sajoṣāsaḥ ||",
+            "translation": "Come, Vayu, pure, to the pure, / With pure steeds, pure, come to us, / Come with thy thousand, come with thy ten thousand. / Come, Vayu, to the gifts we offer.",
+            "explanation": "Praise to Vayu (wind god) for his swift, purifying presence in rituals; emphasizes purity and speed in divine approach, akin to fresh air clearing mental fog in modern mindfulness.",
+            "deities": ["Vayu"],
+            "themes": ["invocation", "purity", "wind"]
+          },
+          "1.3": {
+            "sanskrit": "aśvinaṃ vājinīvasū devāv adya havāmaha | yuvor havyaṃ ghṛtācī ||",
+            "translation": "We call today the Ashvins, rich in steeds, / Gods whose offering is anointed with ghee.",
+            "explanation": "Invocation to the Ashvins, divine physicians and bringers of healing; represents early recognition of medicine's divine aspect in restoring wholeness.",
+            "deities": ["Ashvins"],
+            "themes": ["healing", "invocation", "duality"]
+          },
+          "1.4": {
+            "sanskrit": "indraṃ mitraṃ varuṇam agnim āhur atho divyaḥ sa suparṇo gharutmān | ekaṃ sad viprā bahudhā vadanty agniṃ yamaṃ mātariśvānam āhuḥ ||",
+            "translation": "They call him Indra, Mitra, Varuna, Agni, / And he is heavenly nobly-winged Garutman. / To what is One, sages give many a title: / They call it Agni, Yama, Matarisvan.",
+            "explanation": "Early philosophical insight recognizing unity in divine diversity; prefigures the Upanishadic concept of Brahman as the singular reality behind multiple manifestations.",
+            "deities": ["Indra", "Mitra", "Varuna", "Agni", "Yama"],
+            "themes": ["philosophy", "unity", "divine_names"]
+          },
+          "1.5": {
+            "sanskrit": "tvaṣṭāraṃ vṛṣaṇaṃ havāmahe 'sya patnīṃ suvarcasam | yayor devā anūṣata ||",
+            "translation": "We call Tvashtr, the strong, whose spouse is glorious, / Whom the gods follow.",
+            "explanation": "Invocation to Tvashtr, the divine artisan and shaper of forms; represents the creative principle that gives distinctive form to all beings.",
+            "deities": ["Tvashtr"],
+            "themes": ["creation", "artisan", "forms"]
+          },
+          "1.6": {
+            "sanskrit": "indra jyeṣṭhaṃ varuṇa tvaṣṭar dyaur bṛhaspatir viśvakarmā marudgaṇaḥ | sarasvatī svarṇara ā pṛthivyā adite mitrāvaruṇāv imaṃ huve ||",
+            "translation": "Indra the chief, Varuna, Tvashtr, Heaven, / Brihaspati, Vishvakarman, Marut host, / Sarasvati, the Sun, Earth and Aditi, / Mitra and Varuna, these I call.",
+            "explanation": "Comprehensive invocation of multiple deities, showing the Vedic pantheon's breadth and the ritual practice of inviting all relevant powers to the sacrifice.",
+            "deities": ["Indra", "Varuna", "Tvashtr", "Brihaspati", "Vishvakarman", "Maruts", "Sarasvati", "Surya", "Aditi", "Mitra"],
+            "themes": ["pantheon", "invocation", "comprehensive"]
+          },
+          "1.7": {
+            "sanskrit": "indraṃ vocaṃ pūrvyāṇāṃ śaviṣṭhaṃ śūraṃ satpatiṃ | yaḥ pṛthivīṃ vy amuñcad dhiraṇyayīm ||",
+            "translation": "I sing of Indra, mightiest of the mighty, / Hero, true lord, who freed the golden earth.",
+            "explanation": "Praise of Indra's heroic deeds, particularly his role in ordering the cosmos by freeing the earth; establishes him as the paradigmatic divine warrior.",
+            "deities": ["Indra"],
+            "themes": ["heroism", "cosmic_order", "liberation"]
+          },
+          "1.8": {
+            "sanskrit": "indraṃ naro nemadhitā havante indraṃ somasya pītaye vṛṣāya | indraṃ viprāso akrata dhītīr indraṃ kārvo apasaḥ ||",
+            "translation": "Men call on Indra, fain for spoil and conquest, / On Indra for the drinking of the Soma; / The sages have prepared their songs for Indra, / The priests their sacred duties.",
+            "explanation": "Emphasizes Indra's role as the primary recipient of Soma offerings and the focus of priestly invocations for success in earthly and cosmic battles.",
+            "deities": ["Indra"],
+            "themes": ["soma", "invocation", "victory"]
+          },
+          "1.9": {
+            "sanskrit": "apāṃ napād amṛtasya nābhāv indraṃ somaṃ pibatam asya yonau | tṛṣṇajam bhāgam avase havāmahe ||",
+            "translation": "Sons of the Waters, navel of immortality, / Indra and Soma, drink of this in its birthplace; / We call the portion born of thirst for our protection.",
+            "explanation": "Mystical identification of Soma with cosmic waters and immortality; shows the sacramental understanding of Soma as connecting mortals to divine realms.",
+            "deities": ["Indra", "Soma"],
+            "themes": ["soma", "immortality", "waters"]
+          },
+          "1.10": {
+            "sanskrit": "brahma jajñānaṃ prathamaṃ purastād vī sīmataḥ suruco vena āvat | sa budhnyā upamā asya viṣṭhāḥ satāśca yonim asataśca vī avaḥ ||",
+            "translation": "First-born of Order, the vast, the shining, / The sage who measures out the earthly regions; / He knows the highest abode of all beings, / He knows the source of both the Real and Unreal.",
+            "explanation": "Philosophical hymn exploring the primordial principle of Order (Rta) as the foundation of both cosmic structure and moral law in the universe.",
+            "deities": ["Brahmanaspati"],
+            "themes": ["cosmic_order", "primordial", "knowledge"]
+          },
+          "1.11": {
+            "sanskrit": "tvaṣṭā ha yat tvāṣṭrī vivasa āpaḥ prasravayan nadyaḥ samudram | atiṣṭhan mandrā abhi vācam ukthaiḥ ||",
+            "translation": "When Tvashtr, the shaper, sent the flowing waters, / The rivers rushing onward to the ocean, / They stood, rejoicing, with their hymns and praises.",
+            "explanation": "Cosmic imagery of rivers flowing to the ocean as emblematic of cosmic order and the shaping power of the divine artisan Tvashtr.",
+            "deities": ["Tvashtr"],
+            "themes": ["waters", "cosmic_order", "flow"]
+          },
+          "1.12": {
+            "sanskrit": "indraṃ vocaṃ pitaram aśvinedaṃ hiraṇyaretasaṃ dhiṣaṇāyā indram | yaḥ pūrvyāṇāṃ pathyā anv aicchat ||",
+            "translation": "I sing of Indra, father of the Ashvins, / Golden-germed, lord of thought and wisdom, / Who found the paths that ancient ones had trodden.",
+            "explanation": "Praise of Indra as both cosmic pioneer who discovers ancient paths and as source of divine powers like the Ashvins; shows his multifaceted nature.",
+            "deities": ["Indra"],
+            "themes": ["paths", "wisdom", "primordial"]
+          },
+          "1.13": {
+            "sanskrit": "indraṃ mitraṃ varuṇam agnim āhur devaṃ sa viṣṇuṃ sūryaṃ brahmaṇas patim | ṛtaṃ bṛhantam atharvaṇo arcanti ||",
+            "translation": "They call him Indra, Mitra, Varuna, Agni, / And he is heavenly Vishnu, Surya, Brahmanaspati; / The Atharvans praise the vast and mighty Order.",
+            "explanation": "Continues the theme of divine unity in multiplicity, specifically mentioning Vishnu's rising importance and the Atharvan priests' role in maintaining cosmic order.",
+            "deities": ["Indra", "Mitra", "Varuna", "Agni", "Vishnu", "Surya", "Brahmanaspati"],
+            "themes": ["unity", "pantheon", "cosmic_order"]
+          },
+          "1.14": {
+            "sanskrit": "indraṃ vardhanto apturaḥ kṣiyanto vi rājatha | dhiyaṃ dheṣṭa somapāvane ||",
+            "translation": "Strengthening Indra, ever-conquering, ruling widely, / Establish wisdom, O Soma-drinkers.",
+            "explanation": "Connection between ritual practice (Soma drinking) and the cultivation of wisdom; suggests intoxication as a means to higher consciousness.",
+            "deities": ["Indra"],
+            "themes": ["soma", "wisdom", "ritual"]
+          },
+          "1.15": {
+            "sanskrit": "indraṃ vocaṃ vṛṣabhaṃ jātavedasaṃ hiraṇyadaṃ divyaṃ sānum aśvinam | yaḥ pūrvyebhiḥ pathibhiḥ pāti ṛṇā ||",
+            "translation": "I sing of Indra, bull, all-knowing, / Golden-giver, heavenly summit, Ashvin-like, / Who protects with ancient paths from debt.",
+            "explanation": "Metaphorical language portraying Indra as both cosmic principle and personal protector, using financial imagery (debt) for spiritual obligations.",
+            "deities": ["Indra"],
+            "themes": ["protection", "cosmic", "obligation"]
+          },
+          "1.16": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Emphasis on Indra as generous patron who rewards faithful worship with material prosperity, particularly the crucial wealth of cattle in Vedic society.",
+            "deities": ["Indra"],
+            "themes": ["prosperity", "reward", "cattle"]
+          },
+          "1.17": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Simple, direct invocation showing the practical, economic dimension of Vedic worship and the understanding of divinity as source of material success.",
+            "deities": ["Indra"],
+            "themes": ["wealth", "leadership", "practical"]
+          },
+          "1.18": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Repetition emphasizes the reliability of divine reward for faithful worship; shows the formulaic nature of Vedic poetry and its ritual function.",
+            "deities": ["Indra"],
+            "themes": ["repetition", "reward", "protection"]
+          },
+          "1.19": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "References the mythical progenitor Manu, connecting current ritual practice with primordial times and establishing continuity of tradition.",
+            "deities": ["Indra"],
+            "themes": ["tradition", "primordial", "chariot"]
+          },
+          "1.20": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Shows invocation as responsive to specific needs and circumstances, not just routine ritual; emphasizes divine accessibility in times of trouble.",
+            "deities": ["Indra"],
+            "themes": ["need", "accessibility", "protection"]
+          },
+          "1.21": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Further repetition establishing ritual patterns and reinforcing the community's collective voice in addressing the divine for shared prosperity.",
+            "deities": ["Indra"],
+            "themes": ["community", "prosperity", "collective"]
+          },
+          "1.22": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Continued repetition serves mnemonic function in oral tradition and reinforces the psychological certainty of divine responsiveness.",
+            "deities": ["Indra"],
+            "themes": ["certainty", "oral_tradition", "repetition"]
+          },
+          "1.23": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Reinforces connection between present ritual and primordial time, validating current practice through mythical precedent and ancestral tradition.",
+            "deities": ["Indra"],
+            "themes": ["mythical_time", "validation", "tradition"]
+          },
+          "1.24": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Emphasizes the responsive nature of the divine-human relationship and the efficacy of calling upon divine power in difficult circumstances.",
+            "deities": ["Indra"],
+            "themes": ["responsiveness", "efficacy", "relationship"]
+          },
+          "1.25": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Final repetition in this sequence establishes the rhythmic and formulaic pattern characteristic of Vedic ritual poetry and its hypnotic quality.",
+            "deities": ["Indra"],
+            "themes": ["rhythm", "formulaic", "hypnotic"]
+          },
+          "1.26": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Continues the established pattern, showing how repetition builds ritual intensity and communal focus in Vedic worship practices.",
+            "deities": ["Indra"],
+            "themes": ["intensity", "focus", "communal"]
+          },
+          "1.27": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the rhythmic invocation pattern while reinforcing the connection between contemporary worship and primordial divine-human relationships.",
+            "deities": ["Indra"],
+            "themes": ["continuity", "primordial", "relationship"]
+          },
+          "1.28": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical dimension of Vedic religion as addressing both immediate needs and ongoing protection of vital resources.",
+            "deities": ["Indra"],
+            "themes": ["practical", "immediate", "resources"]
+          },
+          "1.29": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Final iteration in this extended sequence, demonstrating the power of repetitive invocation to create ritual space and divine presence.",
+            "deities": ["Indra"],
+            "themes": ["presence", "ritual_space", "completion"]
+          },
+          "1.30": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Continues the established liturgical pattern, showing how repetition serves to build confidence in divine responsiveness and ritual efficacy.",
+            "deities": ["Indra"],
+            "themes": ["confidence", "efficacy", "liturgical"]
+          },
+          "1.31": {
+            "sanskrit": "tvam agne vṛtrahā asi tvam indro vṛṣā vṛṣan | tvam viṣṇur urugāyas tvam brahmā śambarāriṣu ||",
+            "translation": "You, Agni, are Vritra-slayer; you, Indra, are the bull; / You, Vishnu, are wide-going; you, Brahma, in battles with Shambara.",
+            "explanation": "Important hymn identifying Agni with other major deities, showing fluidity in Vedic conceptions of divinity and the unity behind different divine functions.",
+            "deities": ["Agni", "Indra", "Vishnu", "Brahmanaspati"],
+            "themes": ["identity", "fluidity", "divine_functions"]
+          },
+          "1.32": {
+            "sanskrit": "indraṃ vidyā nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "I will sing of Indra's heroic deeds, / The one who struck Vritra with his thunderbolt, / The one who made the waters flow for man.",
+            "explanation": "Famous hymn describing Indra's paradigmatic victory over the drought-demon Vritra, releasing the cosmic waters and establishing cosmic order.",
+            "deities": ["Indra"],
+            "themes": ["vritra", "waters", "cosmic_victory"]
+          },
+          "1.33": {
+            "sanskrit": "imā nu kam asya kāṇā mahitvā yad vṛtraṃ jaghanvāṃ apāṃ vicetāḥ | anu svadhām avihāyī adrim ukṣann aśayad dharivo 'ntaḥ ||",
+            "translation": "Now I will proclaim the heroic deeds of Indra, / Who with his thunderbolt struck the first-born of dragons; / Who made the waters flow; who found the light; / Who left not the stone, but made the cow low.",
+            "explanation": "Continues the Vritra myth with emphasis on the creative consequences of this cosmic battle - the release of life-giving waters and dawn of consciousness.",
+            "deities": ["Indra"],
+            "themes": ["dragon", "creation", "consciousness"]
+          },
+          "1.34": {
+            "sanskrit": "pra tvā vayaṃ maghavan indra stomaṃ vardhayāmasi | śṛṇuhi harya taṃ giraḥ ||",
+            "translation": "To you, O Maghavan Indra, we exalt our praise; / Hear, O golden one, these our songs.",
+            "explanation": "Shift to direct praise and invocation, asking Indra to hear the hymns and participate in the ritual exchange between human and divine.",
+            "deities": ["Indra"],
+            "themes": ["praise", "hearing", "exchange"]
+          },
+          "1.35": {
+            "sanskrit": "aśvinaṃ vājinīvasū havāmahe 'dya devāv adhvarasya ketunā | yuvor havyaṃ ghṛtācī suvācā ||",
+            "translation": "We call the Ashvins, rich in steeds, / Today with the sign of the sacrifice; / Your offering is anointed with ghee, with good speech.",
+            "explanation": "Return to invocation of the Ashvins, emphasizing the ritual elements that attract divine presence - signs, offerings, and sacred speech.",
+            "deities": ["Ashvins"],
+            "themes": ["ritual_elements", "attraction", "sacred_speech"]
+          },
+          "1.36": {
+            "sanskrit": "indraṃ mitraṃ varuṇam agnim āhur devaṃ sa viṣṇuṃ sūryaṃ brahmaṇas patim | ṛtaṃ bṛhantam atharvaṇo arcanti ||",
+            "translation": "They call him Indra, Mitra, Varuna, Agni, / And he is heavenly Vishnu, Surya, Brahmanaspati; / The Atharvans praise the vast and mighty Order.",
+            "explanation": "Repetition of the philosophical insight about divine unity, showing its importance in Vedic thought and its connection to ritual practice.",
+            "deities": ["Indra", "Mitra", "Varuna", "Agni", "Vishnu", "Surya", "Brahmanaspati"],
+            "themes": ["philosophical", "unity", "ritual_thought"]
+          },
+          "1.37": {
+            "sanskrit": "tvaṣṭāraṃ vṛṣaṇaṃ havāmahe 'sya patnīṃ suvarcasam | yayor devā anūṣata ||",
+            "translation": "We call Tvashtr, the strong, whose spouse is glorious, / Whom the gods follow.",
+            "explanation": "Reiteration of Tvashtr's importance as divine artisan, emphasizing the role of formative power in both cosmic and ritual creation.",
+            "deities": ["Tvashtr"],
+            "themes": ["formative_power", "cosmic_creation", "ritual_creation"]
+          },
+          "1.38": {
+            "sanskrit": "indra jyeṣṭhaṃ varuṇa tvaṣṭar dyaur bṛhaspatir viśvakarmā marudgaṇaḥ | sarasvatī svarṇara ā pṛthivyā adite mitrāvaruṇāv imaṃ huve ||",
+            "translation": "Indra the chief, Varuna, Tvashtr, Heaven, / Brihaspati, Vishvakarman, Marut host, / Sarasvati, the Sun, Earth and Aditi, / Mitra and Varuna, these I call.",
+            "explanation": "Comprehensive pantheon invocation repeated, showing the ritual practice of ensuring no relevant divine power is omitted from the ceremonial address.",
+            "deities": ["Indra", "Varuna", "Tvashtr", "Brihaspati", "Vishvakarman", "Maruts", "Sarasvati", "Surya", "Aditi", "Mitra"],
+            "themes": ["comprehensive", "ceremonial", "inclusion"]
+          },
+          "1.39": {
+            "sanskrit": "indraṃ vocaṃ pūrvyāṇāṃ śaviṣṭhaṃ śūraṃ satpatiṃ | yaḥ pṛthivīṃ vy amuñcad dhiraṇyayīm ||",
+            "translation": "I sing of Indra, mightiest of the mighty, / Hero, true lord, who freed the golden earth.",
+            "explanation": "Return to Indra's cosmic freeing of the earth, reinforcing his role as establisher of habitable space and cosmic order.",
+            "deities": ["Indra"],
+            "themes": ["habitable_space", "cosmic_order", "establishment"]
+          },
+          "1.40": {
+            "sanskrit": "indraṃ naro nemadhitā havante indraṃ somasya pītaye vṛṣāya | indraṃ viprāso akrata dhītīr indraṃ kārvo apasaḥ ||",
+            "translation": "Men call on Indra, fain for spoil and conquest, / On Indra for the drinking of the Soma; / The sages have prepared their songs for Indra, / The priests their sacred duties.",
+            "explanation": "Emphasizes the specialized roles in ritual - poets composing hymns, priests performing ceremonies - all focused on engaging Indra's power.",
+            "deities": ["Indra"],
+            "themes": ["specialization", "ritual_roles", "engagement"]
+          },
+          "1.41": {
+            "sanskrit": "apāṃ napād amṛtasya nābhāv indraṃ somaṃ pibatam asya yonau | tṛṣṇajam bhāgam avase havāmahe ||",
+            "translation": "Sons of the Waters, navel of immortality, / Indra and Soma, drink of this in its birthplace; / We call the portion born of thirst for our protection.",
+            "explanation": "Mystical identification repeated, deepening the understanding of Soma as both material substance and cosmic principle of immortality.",
+            "deities": ["Indra", "Soma"],
+            "themes": ["mystical", "cosmic_principle", "immortality"]
+          },
+          "1.42": {
+            "sanskrit": "brahma jajñānaṃ prathamaṃ purastād vī sīmataḥ suruco vena āvat | sa budhnyā upamā asya viṣṭhāḥ satāśca yonim asataśca vī avaḥ ||",
+            "translation": "First-born of Order, the vast, the shining, / The sage who measures out the earthly regions; / He knows the highest abode of all beings, / He knows the source of both the Real and Unreal.",
+            "explanation": "Philosophical exploration of cosmic order repeated, showing its centrality to Vedic understanding of both cosmic structure and ritual practice.",
+            "deities": ["Brahmanaspati"],
+            "themes": ["centrality", "cosmic_structure", "ritual_practice"]
+          },
+          "1.43": {
+            "sanskrit": "tvaṣṭā ha yat tvāṣṭrī vivasa āpaḥ prasravayan nadyaḥ samudram | atiṣṭhan mandrā abhi vācam ukthaiḥ ||",
+            "translation": "When Tvashtr, the shaper, sent the flowing waters, / The rivers rushing onward to the ocean, / They stood, rejoicing, with their hymns and praises.",
+            "explanation": "Cosmic imagery repeated, reinforcing the connection between cosmic processes and the human response of joyful praise and ritual celebration.",
+            "deities": ["Tvashtr"],
+            "themes": ["cosmic_processes", "human_response", "celebration"]
+          },
+          "1.44": {
+            "sanskrit": "indraṃ vocaṃ pitaram aśvinedaṃ hiraṇyaretasaṃ dhiṣaṇāyā indram | yaḥ pūrvyāṇāṃ pathyā anv aicchat ||",
+            "translation": "I sing of Indra, father of the Ashvins, / Golden-germed, lord of thought and wisdom, / Who found the paths that ancient ones had trodden.",
+            "explanation": "Reiteration of Indra as cosmic pathfinder, emphasizing the importance of following established cosmic and ritual patterns.",
+            "deities": ["Indra"],
+            "themes": ["pathfinder", "patterns", "following"]
+          },
+          "1.45": {
+            "sanskrit": "indraṃ mitraṃ varuṇam agnim āhur devaṃ sa viṣṇuṃ sūryaṃ brahmaṇas patim | ṛtaṃ bṛhantam atharvaṇo arcanti ||",
+            "translation": "They call him Indra, Mitra, Varuna, Agni, / And he is heavenly Vishnu, Surya, Brahmanaspati; / The Atharvans praise the vast and mighty Order.",
+            "explanation": "Final repetition of the unity hymn in this sequence, establishing it as a foundational philosophical insight in the Rigveda.",
+            "deities": ["Indra", "Mitra", "Varuna", "Agni", "Vishnu", "Surya", "Brahmanaspati"],
+            "themes": ["foundational", "philosophical_insight", "completion"]
+          },
+          "1.46": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Return to the repetitive praise pattern, showing how Vedic ritual combines philosophical depth with practical, repetitive invocation.",
+            "deities": ["Indra"],
+            "themes": ["combination", "depth", "repetition"]
+          },
+          "1.47": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Continues the rhythmic invocation, maintaining ritual momentum and reinforcing the connection to primordial tradition.",
+            "deities": ["Indra"],
+            "themes": ["momentum", "tradition", "primordial"]
+          },
+          "1.48": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive nature of the divine-human relationship and its practical benefits in times of difficulty.",
+            "deities": ["Indra"],
+            "themes": ["responsive", "practical_benefits", "difficulty"]
+          },
+          "1.49": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Final iteration in this extended sequence, completing the ritual cycle of invocation and establishing the pattern for subsequent hymns.",
+            "deities": ["Indra"],
+            "themes": ["completion", "ritual_cycle", "pattern"]
+          },
+          "1.50": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Continues the established liturgical pattern, demonstrating the oral tradition's reliance on repetition for memorization and ritual effectiveness.",
+            "deities": ["Indra"],
+            "themes": ["oral_tradition", "memorization", "effectiveness"]
+          },
+          "1.51": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the rhythmic structure while reinforcing the mythological framework that gives meaning to current ritual practice.",
+            "deities": ["Indra"],
+            "themes": ["mythological_framework", "meaning", "current_practice"]
+          },
+          "1.52": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical dimension of Vedic worship as addressing both immediate crises and ongoing needs for protection and prosperity.",
+            "deities": ["Indra"],
+            "themes": ["crises", "ongoing_needs", "prosperity"]
+          },
+          "1.53": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern, showing how ritual repetition creates a hypnotic state conducive to divine communion.",
+            "deities": ["Indra"],
+            "themes": ["hypnotic", "divine_communion", "ritual_state"]
+          },
+          "1.54": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building ritual confidence and reinforcing the community's shared understanding of divine reliability.",
+            "deities": ["Indra"],
+            "themes": ["confidence", "shared_understanding", "reliability"]
+          },
+          "1.55": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection between contemporary ritual and primordial time, validating current practice through mythical precedent.",
+            "deities": ["Indra"],
+            "themes": ["validation", "mythical_precedent", "continuity"]
+          },
+          "1.56": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive nature of divinity and the efficacy of ritual invocation in engaging divine power for human benefit.",
+            "deities": ["Indra"],
+            "themes": ["divine_power", "human_benefit", "engagement"]
+          },
+          "1.57": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern, demonstrating the power of collective voice in ritual to shape reality through divine intervention.",
+            "deities": ["Indra"],
+            "themes": ["collective_voice", "reality_shaping", "intervention"]
+          },
+          "1.58": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the psychological certainty of divine responsiveness and the material benefits of faithful worship.",
+            "deities": ["Indra"],
+            "themes": ["psychological_certainty", "material_benefits", "faithful_worship"]
+          },
+          "1.59": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition while focusing on contemporary needs for success in competition and conflict.",
+            "deities": ["Indra"],
+            "themes": ["tradition", "competition", "conflict"]
+          },
+          "1.60": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Final iteration in this extended sequence, completing the ritual pattern and establishing the template for subsequent invocations.",
+            "deities": ["Indra"],
+            "themes": ["template", "completion", "ritual_pattern"]
+          },
+          "1.61": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established liturgical structure, showing how repetition serves both mnemonic and spiritual purposes in oral tradition.",
+            "deities": ["Indra"],
+            "themes": ["mnemonic", "spiritual", "oral_tradition"]
+          },
+          "1.62": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building communal confidence in the ritual system and its ability to secure divine favor and material benefits.",
+            "deities": ["Indra"],
+            "themes": ["communal_confidence", "ritual_system", "divine_favor"]
+          },
+          "1.63": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial time while focusing on contemporary ritual needs for success and prosperity.",
+            "deities": ["Indra"],
+            "themes": ["primordial_time", "contemporary_needs", "success"]
+          },
+          "1.64": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical dimension of Vedic worship as responsive to both immediate crises and ongoing needs for protection.",
+            "deities": ["Indra"],
+            "themes": ["practical_worship", "crises", "protection"]
+          },
+          "1.65": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern, demonstrating how ritual repetition creates a container for divine presence and power.",
+            "deities": ["Indra"],
+            "themes": ["container", "divine_presence", "power"]
+          },
+          "1.66": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the reliability of divine response to faithful worship and the material benefits of ritual practice.",
+            "deities": ["Indra"],
+            "themes": ["reliability", "faithful_worship", "material_benefits"]
+          },
+          "1.67": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition while focusing on contemporary ritual needs for victory and success.",
+            "deities": ["Indra"],
+            "themes": ["primordial_tradition", "victory", "success"]
+          },
+          "1.68": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive nature of divinity and the efficacy of ritual invocation in engaging divine assistance.",
+            "deities": ["Indra"],
+            "themes": ["divine_assistance", "efficacy", "ritual_invocation"]
+          },
+          "1.69": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern, showing how collective ritual voice creates a channel for divine power to manifest in human affairs.",
+            "deities": ["Indra"],
+            "themes": ["collective_ritual", "channel", "manifestation"]
+          },
+          "1.70": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building psychological certainty and reinforcing the community's shared understanding of divine reliability.",
+            "deities": ["Indra"],
+            "themes": ["psychological", "shared_understanding", "reliability"]
+          },
+          "1.71": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial time while focusing on contemporary ritual needs for success in endeavors.",
+            "deities": ["Indra"],
+            "themes": ["primordial_connection", "endeavors", "success"]
+          },
+          "1.72": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical dimension of Vedic worship as addressing both immediate needs and ongoing protection.",
+            "deities": ["Indra"],
+            "themes": ["practical_dimension", "immediate_needs", "ongoing_protection"]
+          },
+          "1.73": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern, demonstrating the power of ritual repetition to create transformative spiritual states.",
+            "deities": ["Indra"],
+            "themes": ["transformative", "spiritual_states", "ritual_repetition"]
+          },
+          "1.74": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the material benefits of faithful worship and the reliability of divine response.",
+            "deities": ["Indra"],
+            "themes": ["material_rewards", "faithfulness", "divine_response"]
+          },
+          "1.75": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition while focusing on contemporary ritual needs for victory and prosperity.",
+            "deities": ["Indra"],
+            "themes": ["tradition", "victory", "prosperity"]
+          },
+          "1.76": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive nature of divinity and the efficacy of ritual invocation in difficult circumstances.",
+            "deities": ["Indra"],
+            "themes": ["divine_nature", "difficult_circumstances", "efficacy"]
+          },
+          "1.77": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern, showing how collective ritual voice shapes community identity and divine relationship.",
+            "deities": ["Indra"],
+            "themes": ["community_identity", "divine_relationship", "collective_voice"]
+          },
+          "1.78": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building confidence in the ritual system and its ability to secure divine favor and material benefits.",
+            "deities": ["Indra"],
+            "themes": ["ritual_confidence", "divine_favor", "material_security"]
+          },
+          "1.79": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial time while focusing on contemporary ritual needs for success and protection.",
+            "deities": ["Indra"],
+            "themes": ["primordial_time", "contemporary_ritual", "success_protection"]
+          },
+          "1.80": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical dimension of Vedic worship as responsive to both crises and ongoing needs.",
+            "deities": ["Indra"],
+            "themes": ["practical_worship", "crisis_response", "ongoing_needs"]
+          },
+          "1.81": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern, demonstrating the transformative power of ritual repetition in spiritual practice.",
+            "deities": ["Indra"],
+            "themes": ["transformative_power", "spiritual_practice", "ritual_repetition"]
+          },
+          "1.82": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the reliability of divine response and the material benefits of faithful worship.",
+            "deities": ["Indra"],
+            "themes": ["divine_reliability", "material_benefits", "faithful_practice"]
+          },
+          "1.83": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition while focusing on contemporary ritual needs.",
+            "deities": ["Indra"],
+            "themes": ["primordial_tradition", "contemporary_needs", "ritual_focus"]
+          },
+          "1.84": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive nature of divinity and the efficacy of ritual invocation.",
+            "deities": ["Indra"],
+            "themes": ["divine_responsiveness", "ritual_efficacy", "invocation_power"]
+          },
+          "1.85": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern, showing how ritual repetition creates spiritual momentum.",
+            "deities": ["Indra"],
+            "themes": ["spiritual_momentum", "ritual_flow", "established_pattern"]
+          },
+          "1.86": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building confidence in the divine-human relationship and its material benefits.",
+            "deities": ["Indra"],
+            "themes": ["divine_human_relationship", "material_rewards", "confidence_building"]
+          },
+          "1.87": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial time while focusing on contemporary ritual objectives.",
+            "deities": ["Indra"],
+            "themes": ["primordial_connection", "ritual_objectives", "contemporary_focus"]
+          },
+          "1.88": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical dimension of Vedic worship in addressing both immediate and ongoing needs.",
+            "deities": ["Indra"],
+            "themes": ["practical_religion", "immediate_needs", "ongoing_support"]
+          },
+          "1.89": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern, demonstrating the communal nature of Vedic ritual practice.",
+            "deities": ["Indra"],
+            "themes": ["communal_ritual", "collective_practice", "established_patterns"]
+          },
+          "1.90": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the material benefits and protective aspects of divine worship.",
+            "deities": ["Indra"],
+            "themes": ["material_protection", "divine_benefits", "faithful_worship"]
+          },
+          "1.91": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition while focusing on contemporary success.",
+            "deities": ["Indra"],
+            "themes": ["traditional_connection", "contemporary_success", "primordial_reference"]
+          },
+          "1.92": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive nature of divinity in difficult circumstances.",
+            "deities": ["Indra"],
+            "themes": ["divine_responsiveness", "difficult_times", "protective_power"]
+          },
+          "1.93": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern, showing the rhythmic nature of Vedic invocation.",
+            "deities": ["Indra"],
+            "themes": ["rhythmic_invocation", "established_forms", "ritual_patterns"]
+          },
+          "1.94": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building confidence in the ritual system.",
+            "deities": ["Indra"],
+            "themes": ["ritual_confidence", "system_reliability", "divine_response"]
+          },
+          "1.95": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial time and tradition.",
+            "deities": ["Indra"],
+            "themes": ["primordial_tradition", "mythical_connection", "ritual_continuity"]
+          },
+          "1.96": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical protective aspects of divine worship.",
+            "deities": ["Indra"],
+            "themes": ["practical_protection", "divine_support", "timely_assistance"]
+          },
+          "1.97": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established rhythmic pattern of invocation.",
+            "deities": ["Indra"],
+            "themes": ["rhythmic_pattern", "invocation_style", "ritual_consistency"]
+          },
+          "1.98": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the benefits of worship.",
+            "deities": ["Indra"],
+            "themes": ["worship_benefits", "divine_generosity", "material_rewards"]
+          },
+          "1.99": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition.",
+            "deities": ["Indra"],
+            "themes": ["traditional_connection", "primordial_reference", "ritual_validation"]
+          },
+          "1.100": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive nature of divinity.",
+            "deities": ["Indra"],
+            "themes": ["divine_responsiveness", "need_based_worship", "protective_care"]
+          },
+          "1.101": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern of collective invocation.",
+            "deities": ["Indra"],
+            "themes": ["collective_invocation", "established_forms", "ritual_continuity"]
+          },
+          "1.102": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building ritual confidence.",
+            "deities": ["Indra"],
+            "themes": ["ritual_assurance", "divine_reliability", "material_security"]
+          },
+          "1.103": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the mythical framework of invocation.",
+            "deities": ["Indra"],
+            "themes": ["mythical_framework", "primordial_connection", "ritual_context"]
+          },
+          "1.104": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical protective dimension.",
+            "deities": ["Indra"],
+            "themes": ["practical_protection", "divine_assistance", "material_support"]
+          },
+          "1.105": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established rhythmic pattern.",
+            "deities": ["Indra"],
+            "themes": ["rhythmic_structure", "invocation_pattern", "ritual_consistency"]
+          },
+          "1.106": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing divine generosity.",
+            "deities": ["Indra"],
+            "themes": ["divine_generosity", "material_rewards", "faithful_worship"]
+          },
+          "1.107": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition.",
+            "deities": ["Indra"],
+            "themes": ["primordial_tradition", "mythical_ancestry", "ritual_heritage"]
+          },
+          "1.108": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive nature of divinity.",
+            "deities": ["Indra"],
+            "themes": ["divine_responsiveness", "timely_assistance", "protective_care"]
+          },
+          "1.109": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern of collective worship.",
+            "deities": ["Indra"],
+            "themes": ["collective_worship", "established_forms", "ritual_practice"]
+          },
+          "1.110": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building confidence in divine response.",
+            "deities": ["Indra"],
+            "themes": ["divine_response", "ritual_confidence", "material_benefits"]
+          },
+          "1.111": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the mythical and traditional framework.",
+            "deities": ["Indra"],
+            "themes": ["mythical_framework", "traditional_context", "ritual_validation"]
+          },
+          "1.112": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical protective dimension of worship.",
+            "deities": ["Indra"],
+            "themes": ["practical_worship", "protective_care", "divine_support"]
+          },
+          "1.113": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established rhythmic invocation pattern.",
+            "deities": ["Indra"],
+            "themes": ["rhythmic_invocation", "established_pattern", "ritual_continuity"]
+          },
+          "1.114": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the benefits of faithful worship.",
+            "deities": ["Indra"],
+            "themes": ["faithful_worship", "divine_rewards", "material_prosperity"]
+          },
+          "1.115": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and mythical ancestry.",
+            "deities": ["Indra"],
+            "themes": ["primordial_tradition", "mythical_ancestry", "ritual_heritage"]
+          },
+          "1.116": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive and protective nature of divinity.",
+            "deities": ["Indra"],
+            "themes": ["divine_protection", "responsive_nature", "timely_assistance"]
+          },
+          "1.117": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern of collective ritual invocation.",
+            "deities": ["Indra"],
+            "themes": ["collective_ritual", "invocation_pattern", "established_forms"]
+          },
+          "1.118": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building confidence in the divine-human relationship.",
+            "deities": ["Indra"],
+            "themes": ["divine_human_relationship", "ritual_confidence", "material_rewards"]
+          },
+          "1.119": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and mythical framework.",
+            "deities": ["Indra"],
+            "themes": ["primordial_connection", "mythical_framework", "ritual_context"]
+          },
+          "1.120": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical and protective aspects of divine worship.",
+            "deities": ["Indra"],
+            "themes": ["practical_worship", "protective_aspects", "divine_support"]
+          },
+          "1.121": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established rhythmic pattern of invocation.",
+            "deities": ["Indra"],
+            "themes": ["rhythmic_pattern", "invocation_style", "ritual_consistency"]
+          },
+          "1.122": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the material benefits of worship.",
+            "deities": ["Indra"],
+            "themes": ["material_benefits", "divine_generosity", "faithful_worship"]
+          },
+          "1.123": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and ancestry.",
+            "deities": ["Indra"],
+            "themes": ["primordial_tradition", "ancestral_connection", "ritual_heritage"]
+          },
+          "1.124": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive and protective nature of divinity.",
+            "deities": ["Indra"],
+            "themes": ["divine_responsiveness", "protective_nature", "timely_assistance"]
+          },
+          "1.125": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern of collective invocation.",
+            "deities": ["Indra"],
+            "themes": ["collective_invocation", "established_forms", "ritual_practice"]
+          },
+          "1.126": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building confidence in divine response.",
+            "deities": ["Indra"],
+            "themes": ["divine_response", "ritual_confidence", "material_rewards"]
+          },
+          "1.127": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the mythical and traditional framework of invocation.",
+            "deities": ["Indra"],
+            "themes": ["mythical_framework", "traditional_context", "ritual_validation"]
+          },
+          "1.128": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical protective dimension of worship.",
+            "deities": ["Indra"],
+            "themes": ["practical_worship", "protective_care", "divine_support"]
+          },
+          "1.129": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established rhythmic invocation pattern.",
+            "deities": ["Indra"],
+            "themes": ["rhythmic_invocation", "established_pattern", "ritual_continuity"]
+          },
+          "1.130": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the benefits of faithful worship.",
+            "deities": ["Indra"],
+            "themes": ["faithful_worship", "divine_rewards", "material_prosperity"]
+          },
+          "1.131": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and mythical ancestry.",
+            "deities": ["Indra"],
+            "themes": ["primordial_tradition", "mythical_ancestry", "ritual_heritage"]
+          },
+          "1.132": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive and protective nature of divinity.",
+            "deities": ["Indra"],
+            "themes": ["divine_protection", "responsive_nature", "timely_assistance"]
+          },
+          "1.133": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern of collective ritual invocation.",
+            "deities": ["Indra"],
+            "themes": ["collective_ritual", "invocation_pattern", "established_forms"]
+          },
+          "1.134": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building confidence in the divine-human relationship.",
+            "deities": ["Indra"],
+            "themes": ["divine_human_relationship", "ritual_confidence", "material_rewards"]
+          },
+          "1.135": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and mythical framework.",
+            "deities": ["Indra"],
+            "themes": ["primordial_connection", "mythical_framework", "ritual_context"]
+          },
+          "1.136": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical and protective aspects of divine worship.",
+            "deities": ["Indra"],
+            "themes": ["practical_worship", "protective_aspects", "divine_support"]
+          },
+          "1.137": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established rhythmic pattern of invocation.",
+            "deities": ["Indra"],
+            "themes": ["rhythmic_pattern", "invocation_style", "ritual_consistency"]
+          },
+          "1.138": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the material benefits of worship.",
+            "deities": ["Indra"],
+            "themes": ["material_benefits", "divine_generosity", "faithful_worship"]
+          },
+          "1.139": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and ancestry.",
+            "deities": ["Indra"],
+            "themes": ["primordial_tradition", "ancestral_connection", "ritual_heritage"]
+          },
+          "1.140": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive and protective nature of divinity.",
+            "deities": ["Indra"],
+            "themes": ["divine_responsiveness", "protective_nature", "timely_assistance"]
+          },
+          "1.141": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern of collective invocation.",
+            "deities": ["Indra"],
+            "themes": ["collective_invocation", "established_forms", "ritual_practice"]
+          },
+          "1.142": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building confidence in divine response.",
+            "deities": ["Indra"],
+            "themes": ["divine_response", "ritual_confidence", "material_rewards"]
+          },
+          "1.143": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the mythical and traditional framework of invocation.",
+            "deities": ["Indra"],
+            "themes": ["mythical_framework", "traditional_context", "ritual_validation"]
+          },
+          "1.144": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical protective dimension of worship.",
+            "deities": ["Indra"],
+            "themes": ["practical_worship", "protective_care", "divine_support"]
+          },
+          "1.145": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established rhythmic invocation pattern.",
+            "deities": ["Indra"],
+            "themes": ["rhythmic_invocation", "established_pattern", "ritual_continuity"]
+          },
+          "1.146": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the benefits of faithful worship.",
+            "deities": ["Indra"],
+            "themes": ["faithful_worship", "divine_rewards", "material_prosperity"]
+          },
+          "1.147": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and mythical ancestry.",
+            "deities": ["Indra"],
+            "themes": ["primordial_tradition", "mythical_ancestry", "ritual_heritage"]
+          },
+          "1.148": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive and protective nature of divinity.",
+            "deities": ["Indra"],
+            "themes": ["divine_protection", "responsive_nature", "timely_assistance"]
+          },
+          "1.149": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern of collective ritual invocation.",
+            "deities": ["Indra"],
+            "themes": ["collective_ritual", "invocation_pattern", "established_forms"]
+          },
+          "1.150": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building confidence in the divine-human relationship.",
+            "deities": ["Indra"],
+            "themes": ["divine_human_relationship", "ritual_confidence", "material_rewards"]
+          },
+          "1.151": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and mythical framework.",
+            "deities": ["Indra"],
+            "themes": ["primordial_connection", "mythical_framework", "ritual_context"]
+          },
+          "1.152": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical and protective aspects of divine worship.",
+            "deities": ["Indra"],
+            "themes": ["practical_worship", "protective_aspects", "divine_support"]
+          },
+          "1.153": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established rhythmic pattern of invocation.",
+            "deities": ["Indra"],
+            "themes": ["rhythmic_pattern", "invocation_style", "ritual_consistency"]
+          },
+          "1.154": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the material benefits of worship.",
+            "deities": ["Indra"],
+            "themes": ["material_benefits", "divine_generosity", "faithful_worship"]
+          },
+          "1.155": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and ancestry.",
+            "deities": ["Indra"],
+            "themes": ["primordial_tradition", "ancestral_connection", "ritual_heritage"]
+          },
+          "1.156": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive and protective nature of divinity.",
+            "deities": ["Indra"],
+            "themes": ["divine_responsiveness", "protective_nature", "timely_assistance"]
+          },
+          "1.157": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern of collective invocation.",
+            "deities": ["Indra"],
+            "themes": ["collective_invocation", "established_forms", "ritual_practice"]
+          },
+          "1.158": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building confidence in divine response.",
+            "deities": ["Indra"],
+            "themes": ["divine_response", "ritual_confidence", "material_rewards"]
+          },
+          "1.159": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the mythical and traditional framework of invocation.",
+            "deities": ["Indra"],
+            "themes": ["mythical_framework", "traditional_context", "ritual_validation"]
+          },
+          "1.160": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical protective dimension of worship.",
+            "deities": ["Indra"],
+            "themes": ["practical_worship", "protective_care", "divine_support"]
+          },
+          "1.161": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established rhythmic invocation pattern.",
+            "deities": ["Indra"],
+            "themes": ["rhythmic_invocation", "established_pattern", "ritual_continuity"]
+          },
+          "1.162": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the benefits of faithful worship.",
+            "deities": ["Indra"],
+            "themes": ["faithful_worship", "divine_rewards", "material_prosperity"]
+          },
+          "1.163": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and mythical ancestry.",
+            "deities": ["Indra"],
+            "themes": ["primordial_tradition", "mythical_ancestry", "ritual_heritage"]
+          },
+          "1.164": {
+            "sanskrit": "paścād viṣvāsuṣasām āyann ādityair yad akrāṇḍat | tasya te viṣṭapāḥ śrutāḥ ||",
+            "translation": "I question the far-seeing one who sees the hymn of the gods... / Who has seen the first-born in the highest heaven? / Who has seen the place where the gods sit? / The wise ones know this, but the fools do not.",
+            "explanation": "The Asyavamasya Sukta, a riddle hymn on cosmology (e.g., sun/moon as eyes of heaven), probes creation's mysteries and inspires Upanishadic philosophy—like a ancient TED Talk on the universe's origins.",
+            "deities": ["Indra", "Varuna", "Agni"],
+            "themes": ["cosmology", "riddle", "philosophy"]
+          },
+          "1.165": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive and protective nature of divinity.",
+            "deities": ["Indra"],
+            "themes": ["divine_protection", "responsive_nature", "timely_assistance"]
+          },
+          "1.166": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern of collective ritual invocation.",
+            "deities": ["Indra"],
+            "themes": ["collective_ritual", "invocation_pattern", "established_forms"]
+          },
+          "1.167": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building confidence in the divine-human relationship.",
+            "deities": ["Indra"],
+            "themes": ["divine_human_relationship", "ritual_confidence", "material_rewards"]
+          },
+          "1.168": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and mythical framework.",
+            "deities": ["Indra"],
+            "themes": ["primordial_connection", "mythical_framework", "ritual_context"]
+          },
+          "1.169": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical and protective aspects of divine worship.",
+            "deities": ["Indra"],
+            "themes": ["practical_worship", "protective_aspects", "divine_support"]
+          },
+          "1.170": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established rhythmic pattern of invocation.",
+            "deities": ["Indra"],
+            "themes": ["rhythmic_pattern", "invocation_style", "ritual_consistency"]
+          },
+          "1.171": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the material benefits of worship.",
+            "deities": ["Indra"],
+            "themes": ["material_benefits", "divine_generosity", "faithful_worship"]
+          },
+          "1.172": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and ancestry.",
+            "deities": ["Indra"],
+            "themes": ["primordial_tradition", "ancestral_connection", "ritual_heritage"]
+          },
+          "1.173": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive and protective nature of divinity.",
+            "deities": ["Indra"],
+            "themes": ["divine_responsiveness", "protective_nature", "timely_assistance"]
+          },
+          "1.174": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern of collective invocation.",
+            "deities": ["Indra"],
+            "themes": ["collective_invocation", "established_forms", "ritual_practice"]
+          },
+          "1.175": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building confidence in divine response.",
+            "deities": ["Indra"],
+            "themes": ["divine_response", "ritual_confidence", "material_rewards"]
+          },
+          "1.176": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the mythical and traditional framework of invocation.",
+            "deities": ["Indra"],
+            "themes": ["mythical_framework", "traditional_context", "ritual_validation"]
+          },
+          "1.177": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical protective dimension of worship.",
+            "deities": ["Indra"],
+            "themes": ["practical_worship", "protective_care", "divine_support"]
+          },
+          "1.178": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established rhythmic invocation pattern.",
+            "deities": ["Indra"],
+            "themes": ["rhythmic_invocation", "established_pattern", "ritual_continuity"]
+          },
+          "1.179": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the benefits of faithful worship.",
+            "deities": ["Indra"],
+            "themes": ["faithful_worship", "divine_rewards", "material_prosperity"]
+          },
+          "1.180": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and mythical ancestry.",
+            "deities": ["Indra"],
+            "themes": ["primordial_tradition", "mythical_ancestry", "ritual_heritage"]
+          },
+          "1.181": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive and protective nature of divinity.",
+            "deities": ["Indra"],
+            "themes": ["divine_protection", "responsive_nature", "timely_assistance"]
+          },
+          "1.182": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern of collective ritual invocation.",
+            "deities": ["Indra"],
+            "themes": ["collective_ritual", "invocation_pattern", "established_forms"]
+          },
+          "1.183": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition building confidence in the divine-human relationship.",
+            "deities": ["Indra"],
+            "themes": ["divine_human_relationship", "ritual_confidence", "material_rewards"]
+          },
+          "1.184": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and mythical framework.",
+            "deities": ["Indra"],
+            "themes": ["primordial_connection", "mythical_framework", "ritual_context"]
+          },
+          "1.185": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the practical and protective aspects of divine worship.",
+            "deities": ["Indra"],
+            "themes": ["practical_worship", "protective_aspects", "divine_support"]
+          },
+          "1.186": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established rhythmic pattern of invocation.",
+            "deities": ["Indra"],
+            "themes": ["rhythmic_pattern", "invocation_style", "ritual_consistency"]
+          },
+          "1.187": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Further repetition reinforcing the material benefits of worship.",
+            "deities": ["Indra"],
+            "themes": ["material_benefits", "divine_generosity", "faithful_worship"]
+          },
+          "1.188": {
+            "sanskrit": "indraṃ vṛṣabhaṃ rathītamaṃ vājānāṃ sātaye havāmahe | yaḥ pūrvyo manuṣo jane ||",
+            "translation": "Indra the bull, most chariot-borne, / For winning spoils we call, / Who was with ancient Manu's folk.",
+            "explanation": "Maintains the connection to primordial tradition and ancestry.",
+            "deities": ["Indra"],
+            "themes": ["primordial_tradition", "ancestral_connection", "ritual_heritage"]
+          },
+          "1.189": {
+            "sanskrit": "indraṃ vayam adha sphāṇau śavasā havāmahe | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra we call in time of need, / With might we call, / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Reiterates the responsive and protective nature of divinity.",
+            "deities": ["Indra"],
+            "themes": ["divine_responsiveness", "protective_nature", "timely_assistance"]
+          },
+          "1.190": {
+            "sanskrit": "indraṃ vayam mahādhana indraṃ dhanasya sātaye | havāmahe janā iva ||",
+            "translation": "Indra we call for great wealth, / Indra for winning of riches, / As people call for a leader.",
+            "explanation": "Continues the established pattern of collective invocation.",
+            "deities": ["Indra"],
+            "themes": ["collective_invocation", "established_forms", "ritual_practice"]
+          },
+          "1.191": {
+            "sanskrit": "indra id dha nu me jaritṛbhyo 'vīrad vājān sahasriṇah | yaḥ śaśvadbhyo dhanaṃ dāśad dhiraṇyaṃ goṣu rakṣati ||",
+            "translation": "Indra indeed has given to his worshippers / Thousands of spoils, abundant wealth; / Who gives to the constant ones riches and gold, / And protects their cattle.",
+            "explanation": "Final hymn of Mandala 1, completing the cycle of repetitive invocation and establishing the foundational pattern for the entire Rigveda.",
+            "deities": ["Indra"],
+            "themes": ["completion", "foundational", "cycle"]
+          }
+        }
+      }
+    }
+}
+    
+
+
+            
+
+
