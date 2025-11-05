@@ -456,6 +456,22 @@
     color: rgba(255, 255, 255, 0.5);
   }
   
+  /* Splash Screen */
+  #splash{
+    position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background: url('bg/Library of Hymns.jpg') center/cover no-repeat;
+    text-align:center;padding:24px;
+  }
+  #splash:before{
+    content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,8,26,0.85), rgba(18,16,40,0.85));
+  }
+  #splash > *{position:relative}
+  .splash-title{font-size:2rem;margin:0 0 10px 0;color:var(--accent)}
+  .splash-sub{opacity:0.85;margin:0 0 20px 0}
+  .fade-in{opacity:0;transform:translateY(6px);transition:all .6s ease}
+  .fade-in.show{opacity:1;transform:translateY(0)}
+  .splash-actions{display:flex;gap:12px;justify-content:center}
+  
   .gallery-item img {
     width: 100%;
     height: 100%;
@@ -571,6 +587,19 @@
 </style>
 </head>
 <body>
+
+  <!-- Splash Screen -->
+  <div id="splash">
+    <div class="panel" style="background:linear-gradient(180deg, rgba(12,10,30,0.86), rgba(18,16,40,0.86));border:1px solid rgba(255,255,255,0.08);max-width:720px;width:92%">
+      <h1 class="splash-title">Ṛta's Whisper</h1>
+      <div class="splash-sub">Mandala I — A brief prologue</div>
+      <div id="splashIntro1" class="fade-in" style="margin-top:10px">In the stillness before sound, a glow gathers — waiting.</div>
+      <div id="splashIntro2" class="fade-in" style="margin-top:8px">Listen. When you are ready, begin your step into the hymn.</div>
+      <div style="margin-top:18px" class="splash-actions">
+        <button id="startBtn" class="btn" style="display:none;padding:12px 18px;font-size:1rem">Start ▶</button>
+      </div>
+    </div>
+  </div>
 
   
   <div class="stage" id="stage">
@@ -919,6 +948,12 @@ const closeCodexBtn = document.getElementById('closeCodexBtn');
 const vnMenuBtn = document.getElementById('vnMenuBtn');
 const vnOverlay = document.getElementById('vnOverlay');
 
+// Splash Elements
+const splash = document.getElementById('splash');
+const startBtn = document.getElementById('startBtn');
+const splashIntro1 = document.getElementById('splashIntro1');
+const splashIntro2 = document.getElementById('splashIntro2');
+
 
 const cineEls = [
   document.getElementById('cine1'),
@@ -1204,6 +1239,10 @@ function typeText(txt, callback) {
       const char = chars[i];
       if (char && char.charCodeAt(0) >= 32 && char.charCodeAt(0) <= 126) {
         textBox.textContent += char;
+      }
+      // Subtle typewriter blip every 3 characters
+      if (window.audio && window.audio.playType && (i % 3 === 0)) {
+        window.audio.playType();
       }
       i++;
     } else {
@@ -2091,6 +2130,7 @@ vnMenuBtn.onclick = () => {
 closeMenuBtn.onclick = closeMenu;
 closeCodexBtn.onclick = closeCodex;
 closeMeaningBtn.onclick = closeMeaningModal;
+
 // Keyboard: Space / Enter trigger Next
 document.addEventListener('keydown', (ev) => {
   const key = ev.key;
@@ -2098,6 +2138,8 @@ document.addEventListener('keydown', (ev) => {
   // Avoid when typing in inputs or content-editable
   const ae = document.activeElement;
   if (ae && (ae.tagName === 'INPUT' || ae.tagName === 'TEXTAREA' || ae.isContentEditable)) return;
+  // Avoid when splash is visible
+  if (typeof splash !== 'undefined' && splash && splash.style.display !== 'none') return;
   // Do not advance when choice/puzzle overlays are shown
   if (choicesEl.classList.contains('show') || puzzleEl.classList.contains('show')) return;
   // Prevent page scrolling on Space/Enter
@@ -2105,7 +2147,80 @@ document.addEventListener('keydown', (ev) => {
   if (nextBtn && !nextBtn.disabled) {
     nextBtn.click();
   }
-}); 
+});
+
+/* ---------- Audio System ---------- */
+(function(){
+  const clamp = (v,min,max)=> Math.max(min, Math.min(max, v));
+  const getVol = (k, def)=> clamp(((state.settings && typeof state.settings[k] === 'number') ? state.settings[k] : def)/100, 0, 1);
+  let lastTypeAt = 0;
+  const mkAudio = (src, loop=false)=>{
+    try{
+      const a = new Audio(src);
+      a.preload = 'auto';
+      a.loop = !!loop;
+      return a;
+    }catch(e){ return null; }
+  }
+  const makePlayable = (a, vol)=>{
+    if (!a) return ()=>{};
+    return ()=>{
+      try{
+        a.currentTime = 0;
+        a.volume = vol();
+        a.play().catch(()=>{});
+      }catch(e){}
+    };
+  };
+  const sfxClick = mkAudio('audio/ui_click.mp3');
+  const sfxHover = mkAudio('audio/ui_hover.mp3');
+  const sfxType  = mkAudio('audio/type_blip.mp3');
+  let bgm = null;
+  window.audio = {
+    startBGM(){
+      try{
+        if (!bgm) bgm = mkAudio('audio/bgm_theme.mp3', true);
+        if (!bgm) return;
+        bgm.volume = getVol('bgmVolume', 60);
+        bgm.play().catch(()=>{});
+      }catch(e){}
+    },
+    playClick: makePlayable(sfxClick, ()=> getVol('sfxVolume', 70)),
+    playHover: makePlayable(sfxHover, ()=> getVol('sfxVolume', 70)),
+    playType(){
+      try{
+        const now = performance.now();
+        if (now - lastTypeAt < 40) return; // throttle
+        lastTypeAt = now;
+        if (!sfxType) return;
+        sfxType.volume = getVol('voiceVolume', 50) * 0.35;
+        sfxType.currentTime = 0;
+        sfxType.play().catch(()=>{});
+      }catch(e){}
+    },
+    playChime(){
+      // Fallback to click sound for character chime
+      if (this.playClick) this.playClick();
+    }
+  };
+
+  // Global button/choice/fab hover/click sounds (event delegation)
+  document.addEventListener('click', (e)=>{
+    const t = e.target;
+    if (!t) return;
+    if (t.classList && (t.classList.contains('btn') || t.classList.contains('fab') || t.classList.contains('choice'))) {
+      if (window.audio && window.audio.playClick) window.audio.playClick();
+    }
+  }, true);
+  document.addEventListener('mouseenter', (e)=>{
+    const t = e.target;
+    if (!t) return;
+    if (t.classList && (t.classList.contains('btn') || t.classList.contains('fab') || t.classList.contains('choice'))) {
+      if (window.audio && window.audio.playHover) window.audio.playHover();
+    }
+  }, true);
+})();
+
 // Expose state and functions to window for menuOverlay.js
 window.state = state;
 window.saveAuto = saveAuto;
@@ -2114,20 +2229,44 @@ window.updateHymnInfo = updateHymnInfo;
 window.updateCodexPanel = updateCodexPanel;
 window.enterScene = enterScene;
 
-// Initialize (but wait for scenes to load)
+// Initialize (Splash controls the start)
 loadCodex();
 updateHUD();
 updateHymnInfo();
-// Don't start the game yet - wait for mandala1.js to load
+
+// Splash intro timing
+setTimeout(()=>{ if (splashIntro1) splashIntro1.classList.add('show'); }, 350);
+setTimeout(()=>{ if (splashIntro2) splashIntro2.classList.add('show'); }, 1000);
+setTimeout(()=>{ if (startBtn) startBtn.style.display = ''; }, 1400);
+
+// Start button begins the cinematic
+if (startBtn) {
+  startBtn.onclick = () => {
+    if (splash) splash.style.display = 'none';
+    if (window.audio && window.audio.startBGM) { window.audio.startBGM(); }
+    if (window.scenes) {
+      enterScene('intro_cinematic');
+    } else {
+      // Scenes not ready yet: retry shortly
+      const tryStart = setInterval(()=>{
+        if (window.scenes) {
+          clearInterval(tryStart);
+          enterScene('intro_cinematic');
+        }
+      }, 100);
+    }
+  };
+}
+
+// No splash menu button; Start begins the cinematic
 </script>
 <script src="menuOverlay.js"></script>
 <script src="mandala1.js"></script>
 <script>
-// Start the game after all scripts are loaded
-if (window.scenes) {
-  enterScene('intro_cinematic');
-} else {
-  console.error('Scenes not loaded!');
+// Defer starting; splash handles beginning the cinematic
+if (!window.scenes) {
+  // Keep a log for debugging if scenes didn't load
+  console.error('Scenes not loaded yet - waiting for Start button to retry');
 }
 </script>
 </body>
