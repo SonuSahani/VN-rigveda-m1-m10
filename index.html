@@ -225,11 +225,11 @@
   }
 
   /* HUD */
-  .hud{position:fixed;left:18px;top:18px;background:var(--glass);padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);z-index:11}
+  .hud{position:fixed;left:18px;top:18px;background:var(--glass);padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);z-index:11;max-width:calc(50% - 40px)}
   .hud .line{font-size:0.95rem}
   
   /* Hymn Info HUD */
-  .hymn-info{position:fixed;right:18px;top:18px;background:var(--glass);padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);z-index:11}
+  .hymn-info{position:fixed;right:18px;top:18px;background:var(--glass);padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);z-index:11;max-width:calc(50% - 40px)}
   .hymn-info .line{font-size:0.95rem}
   .hymn-info .mantra{font-style:italic;color:var(--accent);margin-top:4px}
 
@@ -539,23 +539,30 @@
   }
   .mobile-menu-dropdown.show{display:flex}
   .mobile-menu-dropdown .fab{position:relative;right:auto;bottom:auto;width:44px;height:44px;margin:0}
-
+  
   @media (max-width:800px){
     .sprite.player{left:6px}
     .sprite{height:calc(var(--sprite-total) - 6vh)}
     .dialogue{left:10px;right:10px}
     .choices{min-width:320px}
-    .hymn-info{font-size:0.85rem}
+    /* Prevent HUD overlap on mobile */
+    .hud{max-width:calc(50% - 20px);font-size:0.85rem;padding:8px 10px}
+    .hymn-info{max-width:calc(50% - 20px);font-size:0.85rem;padding:8px 10px;top:18px}
     /* Hide Auto and Skip on mobile */
     #autoBtn, #skipBtn{display:none!important}
     /* Move dialogue box up to avoid mobile nav bar */
     .dialogue{bottom:80px}
-    /* Hide individual FABs on mobile, show mobile menu button */
+    /* Mobile menu button position - above dialogue box to avoid overlap */
+    #mobileMenuBtn{bottom:320px!important;display:flex!important}
+    .mobile-menu-dropdown{bottom:280px}
+    /* Hide individual FABs on mobile */
     #menuBtn, #codexBtn, #saveBtn, #vnMenuBtn, #fullscreenBtn{display:none!important}
-    #mobileMenuBtn{display:flex!important}
   }
   
   @media (max-width: 600px) {
+    /* On very small screens, stack HUDs vertically */
+    .hud{max-width:calc(100% - 36px);left:18px;top:18px}
+    .hymn-info{max-width:calc(100% - 36px);left:18px;top:70px;right:auto}
     
     .mantra-puzzle {
       gap: 8px;
