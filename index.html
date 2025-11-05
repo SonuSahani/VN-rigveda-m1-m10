@@ -1047,7 +1047,19 @@ function updateHymnInfo() {
 function saveAuto(){ try{ localStorage.setItem(state.autosaveKey, JSON.stringify(state)); }catch(e){} }
 
 /* ---------- SPRITE / BG helpers ---------- */
+function isMobile(){
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+}
+
 function showSprite(el){ 
+  // On mobile: hide all other sprites before showing this one (avoid overlap)
+  if (isMobile()) {
+    document.querySelectorAll('.sprite').forEach(s => {
+      if (s !== el) {
+        hideSprite(s);
+      }
+    });
+  }
   el.classList.add('show'); 
   el.style.opacity = 1; 
   el.style.visibility = 'visible';
@@ -1103,16 +1115,25 @@ function switchSprite(character, spriteVariant) {
     return;
   }
   
-  // Hide ALL sprites of the same character type using CSS selector (more reliable)
-  const characterClass = character === 'apsara' ? '.sprite.apsara' : '.sprite.gandharva';
-  document.querySelectorAll(characterClass).forEach(sprite => {
-    if (sprite && sprite !== spriteElement) {
-      sprite.classList.remove('show', 'breathing', 'speaking', 'non-speaking', 'happy', 'serious', 'thoughtful');
-      sprite.style.opacity = '0';
-      sprite.style.visibility = 'hidden';
-      sprite.style.display = 'none';
-    }
-  });
+  // On mobile: hide ALL sprites (any character) to avoid overlap
+  if (isMobile()) {
+    document.querySelectorAll('.sprite').forEach(sprite => {
+      if (sprite && sprite !== spriteElement) {
+        hideSprite(sprite);
+      }
+    });
+  } else {
+    // Desktop: hide only sprites of the same character type
+    const characterClass = character === 'apsara' ? '.sprite.apsara' : '.sprite.gandharva';
+    document.querySelectorAll(characterClass).forEach(sprite => {
+      if (sprite && sprite !== spriteElement) {
+        sprite.classList.remove('show', 'breathing', 'speaking', 'non-speaking', 'happy', 'serious', 'thoughtful');
+        sprite.style.opacity = '0';
+        sprite.style.visibility = 'hidden';
+        sprite.style.display = 'none';
+      }
+    });
+  }
   
   // Show the new sprite immediately (no delay needed since we're hiding first)
   if (spriteElement) {
