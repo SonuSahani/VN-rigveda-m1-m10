@@ -29,52 +29,52 @@ const scenes = {
       { who:'Narrator', text:'In the beginning, there was no earth, no sky.\nOnly silence — breathing light within itself.', action: () => { switchBG(bgWhisper); showCinematicLine(0); } },
       { who:'Narrator', text:'From that silence came a whisper.\nFrom whisper — flame.\nAnd from flame — the hymn.', action: () => showCinematicLine(1) },
       { who:'Narrator', text:'You awaken where verses are born — the Ether of Ṛta.\nYour memory is smoke. Your name, unknown.', action: () => { switchBG(bgAwaken); showCinematicLine(2); } },
-      { who:'???', text:'A voice sings through the light — delicate, ancient.', action: () => { switchBG(bgAwaken); showCinematicLine(3); showSprite(apsara); setSpriteEmotion(apsara, 'thoughtful'); } },
-      { who:'Apsara', text:'"Seeker of Flame... your heart still remembers."', action: () => setSpriteEmotion(apsara, 'happy') },
-      { who:'Gandharva', text:'"And your mind still listens. You are between knowing and being."', action: () => { showSprite(gandharva); setSpriteEmotion(gandharva, 'serious'); } },
-      { who:'Apsara', text:'"Before we guide you through the Mandalas, tell us…"', action: () => { setSpriteEmotion(apsara, 'thoughtful'); showIntroChoice(); } }
+      { who:'???', text:'A voice sings through the light — delicate, ancient.', action: () => { switchBG(bgAwaken); showCinematicLine(3); switchSprite('apsara', apsaraListeningSerene); setSpriteEmotion(apsaraListeningSerene, 'thoughtful'); } },
+      { who:'Apsara', text:'"Seeker of Flame... your heart still remembers."', action: () => { switchSprite('apsara', apsaraBlessingPeace); setSpriteEmotion(apsaraBlessingPeace, 'happy'); } },
+      { who:'Gandharva', text:'"And your mind still listens. You are between knowing and being."', action: () => { switchSprite('gandharva', gandharvaListeningSerene); setSpriteEmotion(gandharvaListeningSerene, 'serious'); } },
+      { who:'Apsara', text:'"Before we guide you through the Mandalas, tell us…"', action: () => { switchSprite('apsara', apsaraGuidingGlow); setSpriteEmotion(apsaraGuidingGlow, 'thoughtful'); showIntroChoice(); } }
     ],
     mandala1_opening: [
-      { who:'Narrator', text:'The light around you becomes flame — dancing, alive.\nYou step into the first Mandala — the Realm of Agni.', action: () => { switchBG(bgAgni); hideSprite(player); showSprite(apsara); showSprite(gandharva); } },
-      { who:'Apsara', text:'"Agni — the divine fire, priest of the sacrifice, messenger between realms."', action: () => setSpriteEmotion(apsara, 'serious') },
-      { who:'Gandharva', text:'"The hymn begins not with worship, but awakening."', action: () => setSpriteEmotion(gandharva, 'thoughtful') },
-      { who:'Apsara', text:'"The first verse calls: `Agniṁ īḷe purohitaṁ yajñasya devaṁ ṛtvijam.`"', action: () => { setSpriteEmotion(apsara, 'happy'); state.currentMantra = "Agniṁ īḷe purohitaṁ"; updateHymnInfo(); } },
-      { who:'Gandharva', text:'"Praise the Fire — the Priest — the Divine who kindles creation."\n"Feel it. Do you perceive the heat or the harmony?"', action: () => { setSpriteEmotion(gandharva, 'thoughtful'); showMandala1Approach(); } }
+      { who:'Narrator', text:'The light around you becomes flame — dancing, alive.\nYou step into the first Mandala — the Realm of Agni.', action: () => { switchBG(bgAgni); hideSprite(player); switchSprite('apsara', apsaraReverentPose); switchSprite('gandharva', gandharvaReverentPose); } },
+      { who:'Apsara', text:'"Agni — the divine fire, priest of the sacrifice, messenger between realms."', action: () => { switchSprite('apsara', apsaraTeachingPose); setSpriteEmotion(apsaraTeachingPose, 'serious'); } },
+      { who:'Gandharva', text:'"The hymn begins not with worship, but awakening."', action: () => { switchSprite('gandharva', gandharvaContemplativeCalm); setSpriteEmotion(gandharvaContemplativeCalm, 'thoughtful'); } },
+      { who:'Apsara', text:'"The first verse calls: `Agniṁ īḷe purohitaṁ yajñasya devaṁ ṛtvijam.`"', action: () => { switchSprite('apsara', apsaraRevelationLight); setSpriteEmotion(apsaraRevelationLight, 'happy'); state.currentMantra = "Agniṁ īḷe purohitaṁ"; updateHymnInfo(); } },
+      { who:'Gandharva', text:'"Praise the Fire — the Priest — the Divine who kindles creation."\n"Feel it. Do you perceive the heat or the harmony?"', action: () => { switchSprite('gandharva', gandharvaExplainingPose); setSpriteEmotion(gandharvaExplainingPose, 'thoughtful'); showMandala1Approach(); } }
     ],
     mandala1_scene_ritual: [
-      { who:'Narrator', text:'You stand before the sacred fire. The flames dance, awaiting your offering.', action: () => { switchBG(bgIgnite); setSpriteEmotion(apsara, 'thoughtful'); } },
-      { who:'Apsara', text:'"The ritual is not just action, but intention made manifest."', action: () => setSpriteEmotion(apsara, 'serious') },
-      { who:'Gandharva', text:'"What you offer here shapes the connection between worlds."', action: () => setSpriteEmotion(gandharva, 'thoughtful') },
-      { who:'Apsara', text:'"Choose your offering wisely."', action: () => { setSpriteEmotion(apsara, 'happy'); showRitualChoice(); } }
+      { who:'Narrator', text:'You stand before the sacred fire. The flames dance, awaiting your offering.', action: () => { switchBG(bgIgnite); switchSprite('apsara', apsaraReverentPose); setSpriteEmotion(apsaraReverentPose, 'thoughtful'); } },
+      { who:'Apsara', text:'"The ritual is not just action, but intention made manifest."', action: () => { switchSprite('apsara', apsaraTeachingPose); setSpriteEmotion(apsaraTeachingPose, 'serious'); } },
+      { who:'Gandharva', text:'"What you offer here shapes the connection between worlds."', action: () => { switchSprite('gandharva', gandharvaExplainingPose); setSpriteEmotion(gandharvaExplainingPose, 'thoughtful'); } },
+      { who:'Apsara', text:'"Choose your offering wisely."', action: () => { switchSprite('apsara', apsaraGuidingGlow); setSpriteEmotion(apsaraGuidingGlow, 'happy'); showRitualChoice(); } }
     ],
     mandala1_scene_soma: [
-      { who:'Narrator', text:'The Soma flows — golden nectar of the gods, essence of inspiration.', action: () => { switchBG(bgSomaDreamRealm); setSpriteEmotion(gandharva, 'thoughtful'); } },
-      { who:'Gandharva', text:'"Soma is both plant and deity, both substance and spirit."', action: () => setSpriteEmotion(gandharva, 'serious') },
-      { who:'Apsara', text:'"It opens the doors of perception, allowing communion with the divine."', action: () => setSpriteEmotion(apsara, 'thoughtful') },
-      { who:'Gandharva', text:'"Through Soma, Indra gains his strength. Through Soma, poets find their voice."', action: () => setSpriteEmotion(gandharva, 'happy') },
-      { who:'Apsara', text:'"Let us continue deeper into the hymns."', action: () => { setSpriteEmotion(apsara, 'serious'); startMantraPuzzle(); } }
+      { who:'Narrator', text:'The Soma flows — golden nectar of the gods, essence of inspiration.', action: () => { switchBG(bgSomaDreamRealm); switchSprite('gandharva', gandharvaContemplativeCalm); setSpriteEmotion(gandharvaContemplativeCalm, 'thoughtful'); } },
+      { who:'Gandharva', text:'"Soma is both plant and deity, both substance and spirit."', action: () => { switchSprite('gandharva', gandharvaExplainingPose); setSpriteEmotion(gandharvaExplainingPose, 'serious'); } },
+      { who:'Apsara', text:'"It opens the doors of perception, allowing communion with the divine."', action: () => { switchSprite('apsara', apsaraRevelationLight); setSpriteEmotion(apsaraRevelationLight, 'thoughtful'); } },
+      { who:'Gandharva', text:'"Through Soma, Indra gains his strength. Through Soma, poets find their voice."', action: () => { switchSprite('gandharva', gandharvaResonanceAura); setSpriteEmotion(gandharvaResonanceAura, 'happy'); } },
+      { who:'Apsara', text:'"Let us continue deeper into the hymns."', action: () => { switchSprite('apsara', apsaraGuidingGlow); setSpriteEmotion(apsaraGuidingGlow, 'serious'); startMantraPuzzle(); } }
     ],
     
     // Family of Madhuchchhandas (Hymns 1.1–1.19: Agni-Focused Invocations)
     mandala1_hymn1_1: [
-      { who:'Apsara', text:'"We begin with the first hymn, the spark that ignites all others. Agni, the divine priest."', action: () => { switchBG(bgAgni); setSpriteEmotion(apsara, 'serious'); state.currentHymn = '1.1'; updateHymnInfo(); } },
-      { who:'Gandharva', text:'"`Agnim īḷe purohitam...` I praise Agni, the chosen priest, the minister of sacrifice."', action: () => setSpriteEmotion(gandharva, 'thoughtful') },
-      { who:'Apsara', text:'"He is the herald between worlds, the carrier of offerings. Do you feel his warmth?"', action: () => { setSpriteEmotion(apsara, 'happy'); showHymnChoice('1.1'); } }
+      { who:'Apsara', text:'"We begin with the first hymn, the spark that ignites all others. Agni, the divine priest."', action: () => { switchBG(bgAgni); switchSprite('apsara', apsaraTeachingPose); setSpriteEmotion(apsaraTeachingPose, 'serious'); state.currentHymn = '1.1'; updateHymnInfo(); } },
+      { who:'Gandharva', text:'"`Agnim īḷe purohitam...` I praise Agni, the chosen priest, the minister of sacrifice."', action: () => { switchSprite('gandharva', gandharvaExplainingPose); setSpriteEmotion(gandharvaExplainingPose, 'thoughtful'); } },
+      { who:'Apsara', text:'"He is the herald between worlds, the carrier of offerings. Do you feel his warmth?"', action: () => { switchSprite('apsara', apsaraBlessingPeace); setSpriteEmotion(apsaraBlessingPeace, 'happy'); showHymnChoice('1.1'); } }
     ],
     mandala1_hymn1_2: [
-      { who:'Apsara', text:'"Now the wind stirs — Vayu, bearer of breath and prayer. Listen to how the hymn calls him to the Soma."', action: () => { switchBG(bgSkyOfWinds); setSpriteEmotion(apsara, 'thoughtful'); state.currentHymn = '1.2'; updateHymnInfo(); } },
-      { who:'Gandharva', text:'"`Vāyoṃ śūcīnā śucayo na ā gahi...` Come, Vayu, as to a chariot, to our praise. The air carries the offering upward."', action: () => setSpriteEmotion(gandharva, 'serious') },
-      { who:'Apsara', text:'"In this verse, purity meets speed. What stirs in you — the rush of wind or the calm it brings?"', action: () => { setSpriteEmotion(apsara, 'happy'); showHymnChoice('1.2'); } }
+      { who:'Apsara', text:'"Now the wind stirs — Vayu, bearer of breath and prayer. Listen to how the hymn calls him to the Soma."', action: () => { switchBG(bgSkyOfWinds); switchSprite('apsara', apsaraListeningSerene); setSpriteEmotion(apsaraListeningSerene, 'thoughtful'); state.currentHymn = '1.2'; updateHymnInfo(); } },
+      { who:'Gandharva', text:'"`Vāyoṃ śūcīnā śucayo na ā gahi...` Come, Vayu, as to a chariot, to our praise. The air carries the offering upward."', action: () => { switchSprite('gandharva', gandharvaExplainingPose); setSpriteEmotion(gandharvaExplainingPose, 'serious'); } },
+      { who:'Apsara', text:'"In this verse, purity meets speed. What stirs in you — the rush of wind or the calm it brings?"', action: () => { switchSprite('apsara', apsaraGuidingGlow); setSpriteEmotion(apsaraGuidingGlow, 'happy'); showHymnChoice('1.2'); } }
     ],
     mandala1_hymn1_3: [
-      { who:'Gandharva', text:'"The twins arrive — Ashvins, healers on golden chariots. Their hymn seeks swift aid in the ritual."', action: () => { switchBG(bgRiverOfDeities); setSpriteEmotion(gandharva, 'thoughtful'); state.currentHymn = '1.3'; updateHymnInfo(); } },
-      { who:'Apsara', text:'"`Aśvinā vājinīvasū...` Ye Ashvins, rich in horses, come to us today. They mend what is broken, body and spirit."', action: () => setSpriteEmotion(apsara, 'serious') },
-      { who:'Gandharva', text:'"Healing as duality — one wound, two hands. How do you call upon them?"', action: () => { setSpriteEmotion(gandharva, 'happy'); showAsvinsChoice('1.3'); } }
+      { who:'Gandharva', text:'"The twins arrive — Ashvins, healers on golden chariots. Their hymn seeks swift aid in the ritual."', action: () => { switchBG(bgRiverOfDeities); switchSprite('gandharva', gandharvaContemplativeCalm); setSpriteEmotion(gandharvaContemplativeCalm, 'thoughtful'); state.currentHymn = '1.3'; updateHymnInfo(); } },
+      { who:'Apsara', text:'"`Aśvinā vājinīvasū...` Ye Ashvins, rich in horses, come to us today. They mend what is broken, body and spirit."', action: () => { switchSprite('apsara', apsaraBlessingPeace); setSpriteEmotion(apsaraBlessingPeace, 'serious'); } },
+      { who:'Gandharva', text:'"Healing as duality — one wound, two hands. How do you call upon them?"', action: () => { switchSprite('gandharva', gandharvaTeachingGesture); setSpriteEmotion(gandharvaTeachingGesture, 'happy'); showAsvinsChoice('1.3'); } }
     ],
     mandala1_hymn1_4: [
-      { who:'Apsara', text:'"Here the sages weave names into one thread — Indra, Mitra, Varuna, all echoes of the singular divine."', action: () => { switchBG(bgCosmicBalance); setSpriteEmotion(apsara, 'thoughtful'); state.currentHymn = '1.4'; updateHymnInfo(); } },
-      { who:'Gandharva', text:'"`Indram mitraṃ varuṇam agnim āhur...` They call him Indra, Mitra, Varuna, Agni. The One becomes many in the poets\' words."', action: () => setSpriteEmotion(gandharva, 'serious') },
-      { who:'Apsara', text:'"Unity in diversity — Ṛta\'s first whisper. Does your heart or mind grasp this truth first?"', action: () => { setSpriteEmotion(apsara, 'happy'); showHymnChoice('1.4'); } }
+      { who:'Apsara', text:'"Here the sages weave names into one thread — Indra, Mitra, Varuna, all echoes of the singular divine."', action: () => { switchBG(bgCosmicBalance); switchSprite('apsara', apsaraRevelationLight); setSpriteEmotion(apsaraRevelationLight, 'thoughtful'); state.currentHymn = '1.4'; updateHymnInfo(); } },
+      { who:'Gandharva', text:'"`Indram mitraṃ varuṇam agnim āhur...` They call him Indra, Mitra, Varuna, Agni. The One becomes many in the poets\' words."', action: () => { switchSprite('gandharva', gandharvaExplainingPose); setSpriteEmotion(gandharvaExplainingPose, 'serious'); } },
+      { who:'Apsara', text:'"Unity in diversity — Ṛta\'s first whisper. Does your heart or mind grasp this truth first?"', action: () => { switchSprite('apsara', apsaraTeachingPose); setSpriteEmotion(apsaraTeachingPose, 'happy'); showHymnChoice('1.4'); } }
     ],
     mandala1_hymn1_5: [
       { who:'Apsara', text:'"Agni appears again, but now as illuminator — the light that reveals what is hidden."', action: () => { switchBG(bgAgni); setSpriteEmotion(apsara, 'thoughtful'); state.currentHymn = '1.5'; updateHymnInfo(); } },
@@ -280,7 +280,7 @@ const scenes = {
 		{ who:'Apsara', text:'"How do you transform your fierce power into compassionate action?"', action: () => { setSpriteEmotion(apsara, 'happy'); showMarutsChoice('1.43'); } }
 	  ],
 	  mandala1_hymn1_44: [
-		{ who:'Apsara', text:'"Agni as dawn-kindler — who lights the morning fire, herald of the new day."', action: () => { switchBG(bgAgni); setSpriteEmotion(apsara, 'thoughtful'); state.currentHymn = '1.44'; updateHymnInfo(); } },
+		{ who:'Apsara', text:'"Agni as dawn-kindler — who lights the morning fire, herald of the new day."', action: () => { switchBG(bgGoldenHorizonHalo); setSpriteEmotion(apsara, 'thoughtful'); state.currentHymn = '1.44'; updateHymnInfo(); } },
 		{ who:'Gandharva', text:'"`Agniṁ uṣasam...` Agni who kindles with the dawn, we invoke."', action: () => setSpriteEmotion(gandharva, 'serious') },
 		{ who:'Apsara', text:'"What new beginnings do you welcome in your life?"', action: () => { setSpriteEmotion(apsara, 'happy'); showHymnChoice('1.44'); } }
 	  ],
@@ -517,7 +517,7 @@ const scenes = {
 		{ who:'Apsara', text:'"What sweetness do you savor in life?"', action: () => { setSpriteEmotion(apsara, 'happy'); showHymnChoice('1.90'); } }
 	  ],
 	  mandala1_hymn1_91: [
-		{ who:'Apsara', text:'"Soma the cleanser — who purifies all impurities."', action: () => { switchBG(bgRiverOfDeities); setSpriteEmotion(apsara, 'thoughtful'); state.currentHymn = '1.91'; updateHymnInfo(); } },
+		{ who:'Apsara', text:'"Soma the cleanser — who purifies all impurities."', action: () => { switchBG(bgSomaDreamRealm); setSpriteEmotion(apsara, 'thoughtful'); state.currentHymn = '1.91'; updateHymnInfo(); } },
 		{ who:'Gandharva', text:'"He washes away stains, leaving purity in his wake."', action: () => setSpriteEmotion(gandharva, 'serious') },
 		{ who:'Apsara', text:'"What cleansing do you seek?"', action: () => { setSpriteEmotion(apsara, 'happy'); showHymnChoice('1.91'); } }
 	  ],
@@ -527,7 +527,7 @@ const scenes = {
 		{ who:'Apsara', text:'"What divine heritage do you claim?"', action: () => { setSpriteEmotion(apsara, 'happy'); showUsasChoice('1.92'); } }
 	  ],
 	  mandala1_hymn1_93: [
-		{ who:'Apsara', text:'"Agni and Soma together — fire and nectar in union."', action: () => { switchBG(bgAgni); setSpriteEmotion(apsara, 'thoughtful'); state.currentHymn = '1.93'; updateHymnInfo(); } },
+		{ who:'Apsara', text:'"Agni and Soma together — fire and nectar in union."', action: () => { switchBG(bgSomaDreamRealm); setSpriteEmotion(apsara, 'thoughtful'); state.currentHymn = '1.93'; updateHymnInfo(); } },
 		{ who:'Gandharva', text:'"They complement each other, transformation and inspiration."', action: () => setSpriteEmotion(gandharva, 'serious') },
 		{ who:'Apsara', text:'"What complementary forces work in you?"', action: () => { setSpriteEmotion(apsara, 'happy'); showHymnChoice('1.93'); } }
 	  ],
@@ -774,7 +774,7 @@ const scenes = {
 		{ who:'Apsara', text:'"What multiple expressions do you have?"', action: () => { setSpriteEmotion(apsara, 'happy'); showHymnChoice('1.141'); } }
 	  ],
 	  mandala1_hymn1_142: [
-		{ who:'Apsara', text:'"Agni in morning rite — who kindles the dawn sacrifice."', action: () => { switchBG(bgAgni); setSpriteEmotion(apsara, 'thoughtful'); state.currentHymn = '1.142'; updateHymnInfo(); } },
+		{ who:'Apsara', text:'"Agni in morning rite — who kindles the dawn sacrifice."', action: () => { switchBG(bgGoldenHorizonHalo); setSpriteEmotion(apsara, 'thoughtful'); state.currentHymn = '1.142'; updateHymnInfo(); } },
 		{ who:'Gandharva', text:'"He is invoked at sunrise to begin the day\'s sacred work."', action: () => setSpriteEmotion(gandharva, 'serious') },
 		{ who:'Apsara', text:'"How do you begin your sacred work?"', action: () => { setSpriteEmotion(apsara, 'happy'); showHymnChoice('1.142'); } }
 	  ],
@@ -1098,10 +1098,10 @@ const scenes = {
     // Conclusion scenes
     mandala1_conclusion: [
       { who:'Narrator', text:'The flames of Mandala I subside, leaving behind embers of wisdom.', action: () => { switchBG(bgTransition); hideSprite(apsara); hideSprite(gandharva); showSprite(player); } },
-      { who:'Apsara', text:'"You have walked the path of fire, Seeker. What burns within you now?"', action: () => { showSprite(apsara); setSpriteEmotion(apsara, 'thoughtful'); } },
-      { who:'Gandharva', text:'"The hymns have revealed their secrets to those who listen with both heart and mind."', action: () => { showSprite(gandharva); setSpriteEmotion(gandharva, 'serious'); } },
-      { who:'Apsara', text:'"Remember: Agni is not just in the altar fire, but in the light of understanding."', action: () => setSpriteEmotion(apsara, 'happy') },
-      { who:'Gandharva', text:'"Carry this flame with you as we prepare for the next Mandala."', action: () => setSpriteEmotion(gandharva, 'thoughtful') },
+      { who:'Apsara', text:'"You have walked the path of fire, Seeker. What burns within you now?"', action: () => { switchSprite('apsara', 'apsaraListeningSerene'); const sprite = document.querySelector('.sprite.apsara.show'); if (sprite) setSpriteEmotion(sprite, 'thoughtful'); } },
+      { who:'Gandharva', text:'"The hymns have revealed their secrets to those who listen with both heart and mind."', action: () => { switchSprite('gandharva', 'gandharvaExplainingPose'); setSpriteEmotion(document.getElementById('gandharvaExplainingPose') || gandharva, 'serious'); } },
+      { who:'Apsara', text:'"Remember: Agni is not just in the altar fire, but in the light of understanding."', action: () => { const sprite = document.querySelector('.sprite.apsara.show'); if (sprite) setSpriteEmotion(sprite, 'happy'); } },
+      { who:'Gandharva', text:'"Carry this flame with you as we prepare for the next Mandala."', action: () => { const sprite = document.querySelector('.sprite.gandharva.show'); if (sprite) setSpriteEmotion(sprite, 'thoughtful'); } },
       { who:'Apsara', text:'"The journey continues, but for now, rest in the warmth of what you have learned."', action: () => setSpriteEmotion(apsara, 'serene') },
       { who:'Narrator', text:'The first Mandala is complete. The fire within you burns brighter now.', action: () => { hideSprite(apsara); hideSprite(gandharva); showPostMandalaChoices(); } }
     ],
@@ -1109,10 +1109,10 @@ const scenes = {
     mandala1_reflection: [
       { who:'Narrator', text:'You pause to reflect on your journey through Mandala I.', action: () => { switchBG(bgMeditationArea); hideSprite(apsara); hideSprite(gandharva); showSprite(player); } },
       { who:'Player', text:'"What have I truly learned from these hymns?"', action: () => setSpriteEmotion(player, 'thoughtful') },
-      { who:'Apsara', text:'"You have learned that fire is both destroyer and creator, both physical and spiritual."', action: () => { showSprite(apsara); setSpriteEmotion(apsara, 'thoughtful'); } },
-      { who:'Gandharva', text:'"You have seen how the divine manifests in many forms, yet remains one."', action: () => { showSprite(gandharva); setSpriteEmotion(gandharva, 'serious'); } },
-      { who:'Apsara', text:'"Most importantly, you have learned to listen — to the hymns, to the cosmos, to yourself."', action: () => setSpriteEmotion(apsara, 'happy') },
-      { who:'Gandharva', text:'"This listening is the beginning of true wisdom."', action: () => setSpriteEmotion(gandharva, 'thoughtful') },
+      { who:'Apsara', text:'"You have learned that fire is both destroyer and creator, both physical and spiritual."', action: () => { switchSprite('apsara', 'apsaraTeachingPose'); const sprite = document.querySelector('.sprite.apsara.show'); if (sprite) setSpriteEmotion(sprite, 'thoughtful'); } },
+      { who:'Gandharva', text:'"You have seen how the divine manifests in many forms, yet remains one."', action: () => { switchSprite('gandharva', 'gandharvaExplainingPose'); const sprite = document.querySelector('.sprite.gandharva.show'); if (sprite) setSpriteEmotion(sprite, 'serious'); } },
+      { who:'Apsara', text:'"Most importantly, you have learned to listen — to the hymns, to the cosmos, to yourself."', action: () => { const sprite = document.querySelector('.sprite.apsara.show'); if (sprite) setSpriteEmotion(sprite, 'happy'); } },
+      { who:'Gandharva', text:'"This listening is the beginning of true wisdom."', action: () => { const sprite = document.querySelector('.sprite.gandharva.show'); if (sprite) setSpriteEmotion(sprite, 'thoughtful'); } },
       { who:'Player', text:'"I am ready for what comes next."', action: () => setSpriteEmotion(player, 'determined') },
       { who:'Narrator', text:'Your reflection deepens your understanding. The path ahead awaits.', action: () => { hideSprite(apsara); hideSprite(gandharva); showPostMandalaChoices(); } }
     ]
