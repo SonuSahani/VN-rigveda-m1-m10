@@ -38,15 +38,28 @@
   .sprite.gandharva{right:28px}
   .sprite.center{left:50%;transform:translateX(-50%)}
   
-  /* Breathing animation */
+  /* Breathing animation - for sprites without horizontal transform */
   @keyframes breathing {
     0% { transform: translateY(0) scale(1); }
     50% { transform: translateY(-5px) scale(1.02); }
     100% { transform: translateY(0) scale(1); }
   }
   
+  /* Breathing animation - for centered sprites (with translateX) */
+  @keyframes breathingCentered {
+    0% { transform: translateX(-50%) translateY(0) scale(1); }
+    50% { transform: translateX(-50%) translateY(-5px) scale(1.02); }
+    100% { transform: translateX(-50%) translateY(0) scale(1); }
+  }
+  
   .sprite.breathing {
     animation: breathing 4s ease-in-out infinite;
+  }
+  
+  /* Apply centered breathing animation to sprites that need horizontal centering */
+  .sprite.apsara.breathing,
+  .sprite.center.breathing {
+    animation: breathingCentered 4s ease-in-out infinite;
   }
   
   /* Speaking highlight - Simple brightness adjustment */
@@ -221,7 +234,7 @@
 
   /* FABs */
   .fab{position:fixed;right:18px;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;background:var(--primary);color:#fff;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:11}
-  #menuBtn{bottom:18px} #codexBtn{bottom:86px} #saveBtn{bottom:154px} #vnMenuBtn{bottom:222px}
+  #menuBtn{bottom:18px} #codexBtn{bottom:86px} #saveBtn{bottom:154px} #vnMenuBtn{bottom:224px}
 
   /* modals */
   .modal{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;z-index:20}
@@ -558,6 +571,8 @@
 </style>
 </head>
 <body>
+
+  
   <div class="stage" id="stage">
 
     <!-- BACKGROUNDS (evolving layers with images) -->
@@ -607,7 +622,7 @@
     </div>
 
     <!-- Sprites -->
-    <img id="player" class="sprite player" src="sprite/apa/apsara_Stand_Neutral.png.png" alt="Player">
+    <img id="player" class="sprite player" src="sprite/player/player_F_neutral_serene_s1.png" alt="Player">
     <img id="apsara" class="sprite apsara" src="sprite/apa/apsara_Stand_Neutral.png.png" alt="Apsara">
     <img id="gandharva" class="sprite gandharva" src="sprite/gan/gandharva_Stand_Neutral.png.png" alt="Gandharva">
     <!-- Additional Sprite Poses with ids/classes (hidden until shown) -->
@@ -634,7 +649,7 @@
 
     <!-- Dialogue -->
     <div class="dialogue" id="dialogue">
-      <div class="speaker" id="speaker">—</div>
+      <div class="speaker" id="speaker">-</div>
       <div class="text" id="dialogueText"> </div>
       <div class="controls">
         <div style="display:flex;gap:8px">
@@ -810,10 +825,58 @@ const bgWhisper = document.getElementById('bgWhisper');
 const bgAwaken = document.getElementById('bgAwaken');
 const bgIgnite = document.getElementById('bgIgnite');
 const bgAgni = document.getElementById('bgAgni');
+// Additional background elements
+const bgAgniBirth = document.getElementById('bgAgniBirth');
+const bgApsaraBg = document.getElementById('bgApsaraBg');
+const bgBlueWhiteMeditationVoid = document.getElementById('bgBlueWhiteMeditationVoid');
+const bgCave = document.getElementById('bgCave');
+const bgCelestialGrayLotusChamber = document.getElementById('bgCelestialGrayLotusChamber');
+const bgCosmicBalance = document.getElementById('bgCosmicBalance');
+const bgDialogue = document.getElementById('bgDialogue');
+const bgEarthyRitualGrayPlain = document.getElementById('bgEarthyRitualGrayPlain');
+const bgFestivalOfJoy = document.getElementById('bgFestivalOfJoy');
+const bgGandharvaBg = document.getElementById('bgGandharvaBg');
+const bgGoldenHorizonHalo = document.getElementById('bgGoldenHorizonHalo');
+const bgHeroicMindBattlefield = document.getElementById('bgHeroicMindBattlefield');
+const bgHumanHarmonyRealm = document.getElementById('bgHumanHarmonyRealm');
+const bgIndraThunder1 = document.getElementById('bgIndraThunder1');
+const bgLibraryOfHymns = document.getElementById('bgLibraryOfHymns');
+const bgMeditationArea = document.getElementById('bgMeditationArea');
+const bgPaleGoldAuraRoom = document.getElementById('bgPaleGoldAuraRoom');
+const bgPrismaticMantraField = document.getElementById('bgPrismaticMantraField');
+const bgRitualAndOrder = document.getElementById('bgRitualAndOrder');
+const bgRiverOfDeities = document.getElementById('bgRiverOfDeities');
+const bgShadowVoidFlashbacks = document.getElementById('bgShadowVoidFlashbacks');
+const bgSilverMistSpace = document.getElementById('bgSilverMistSpace');
+const bgSkyOfWinds = document.getElementById('bgSkyOfWinds');
+const bgSomaDreamRealm = document.getElementById('bgSomaDreamRealm');
+const bgSpaceVoid = document.getElementById('bgSpaceVoid');
+const bgTransition = document.getElementById('bgTransition');
+const bgUniversalBalanceRoom = document.getElementById('bgUniversalBalanceRoom');
+const bgWhiteLightChamber = document.getElementById('bgWhiteLightChamber');
 
 const player = document.getElementById('player');
 const apsara = document.getElementById('apsara');
 const gandharva = document.getElementById('gandharva');
+// Apsara sprite variants
+const apsaraBlessingPeace = document.getElementById('apsaraBlessingPeace');
+const apsaraGuidingGlow = document.getElementById('apsaraGuidingGlow');
+const apsaraListeningPose = document.getElementById('apsaraListeningPose');
+const apsaraListeningSerene = document.getElementById('apsaraListeningSerene');
+const apsaraProtectiveAura = document.getElementById('apsaraProtectiveAura');
+const apsaraRevelationLight = document.getElementById('apsaraRevelationLight');
+const apsaraReverentPose = document.getElementById('apsaraReverentPose');
+const apsaraTeachingPose = document.getElementById('apsaraTeachingPose');
+// Gandharva sprite variants
+const gandharvaBlessingLight = document.getElementById('gandharvaBlessingLight');
+const gandharvaContemplativeCalm = document.getElementById('gandharvaContemplativeCalm');
+const gandharvaExplainingPose = document.getElementById('gandharvaExplainingPose');
+const gandharvaGuiding = document.getElementById('gandharvaGuiding');
+const gandharvaListeningPose = document.getElementById('gandharvaListeningPose');
+const gandharvaListeningSerene = document.getElementById('gandharvaListeningSerene');
+const gandharvaResonanceAura = document.getElementById('gandharvaResonanceAura');
+const gandharvaSilentObserve = document.getElementById('gandharvaSilentObserve');
+const gandharvaTeachingGesture = document.getElementById('gandharvaTeachingGesture');
 
 const speaker = document.getElementById('speaker');
 const textBox = document.getElementById('dialogueText');
@@ -856,6 +919,7 @@ const closeCodexBtn = document.getElementById('closeCodexBtn');
 const vnMenuBtn = document.getElementById('vnMenuBtn');
 const vnOverlay = document.getElementById('vnOverlay');
 
+
 const cineEls = [
   document.getElementById('cine1'),
   document.getElementById('cine2'),
@@ -869,21 +933,64 @@ function hide(el){ el.classList.remove('show'); el.style.display = 'none'; }
 function toastMsg(msg, t=1600){ toast.style.display='block'; toast.textContent=msg; setTimeout(()=>toast.style.display='none',t); }
 function sanitizeEnglish(input){
   try{
-    const s = (input||'').toString();
-    // Normalize and strip diacritics, then remove non-ASCII, collapse whitespace
-    return s
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g,'')
-      .replace(/[^\x20-\x7E]/g,'')
-      .replace(/\s+/g,' ')
-      .trim();
-  }catch(e){ return (input||''); }
+    if (!input) return '';
+    let s = String(input);
+    
+    // First, normalize Unicode to decompose characters
+    s = s.normalize('NFD');
+    
+    // Replace all em dashes, en dashes, and other dashes with regular dash
+    s = s.replace(/[—–−―]/g, '-');
+    
+    // Replace ellipsis and other dots
+    s = s.replace(/[…⋯]/g, '...');
+    
+    // Replace all smart quotes with regular quotes
+    s = s.replace(/["""]/g, '"');
+    s = s.replace(/[''']/g, "'");
+    
+    // Replace Sanskrit and special characters with ASCII equivalents
+    s = s.replace(/Ṛta/gi, 'Rta');
+    s = s.replace(/ṛta/gi, 'rta');
+    s = s.replace(/ṁ|ṃ/g, 'm');
+    s = s.replace(/ī|ī/g, 'i');
+    s = s.replace(/ā|ā/g, 'a');
+    s = s.replace(/ū|ū/g, 'u');
+    s = s.replace(/ś|ś/g, 's');
+    s = s.replace(/ṇ/g, 'n');
+    s = s.replace(/ṛ/g, 'r');
+    s = s.replace(/ṅ/g, 'n');
+    s = s.replace(/ḷ/g, 'l');
+    s = s.replace(/ḷe/g, 'le');
+    s = s.replace(/īḷe/g, 'ile');
+    s = s.replace(/ṃ/g, 'm');
+    s = s.replace(/ḥ/g, 'h');
+    s = s.replace(/ṭ/g, 't');
+    s = s.replace(/ḍ/g, 'd');
+    s = s.replace(/Ṣ/g, 'S');
+    s = s.replace(/ṣ/g, 's');
+    
+    // Remove all combining diacritical marks
+    s = s.replace(/[\u0300-\u036f]/g, '');
+    
+    // Remove all non-ASCII characters (keep only printable ASCII: space to ~)
+    s = s.replace(/[^\x20-\x7E]/g, '');
+    
+    // Clean up whitespace
+    s = s.replace(/\s+/g, ' ');
+    s = s.trim();
+    
+    return s;
+  }catch(e){ 
+    // Fallback: aggressive removal of all non-ASCII
+    return String(input || '').replace(/[^\x20-\x7E]/g, '').trim();
+  }
 }
 function updateHUD(){ 
   hudHeart.textContent = state.heart; 
   hudMind.textContent = state.mind; 
   hudBalance.textContent = state.unity; 
-  mandalaName.textContent = state.mandala ? `Mandala ${state.mandala}` : '—'; 
+  mandalaName.textContent = state.mandala ? `Mandala ${state.mandala}` : '-'; 
 }
 function updateHymnInfo() {
   const hid = state.currentHymn || '';
@@ -904,10 +1011,12 @@ function saveAuto(){ try{ localStorage.setItem(state.autosaveKey, JSON.stringify
 /* ---------- SPRITE / BG helpers ---------- */
 function showSprite(el){ 
   el.classList.add('show'); 
-  // Avoid transform conflicts with positioning classes
-  el.classList.remove('breathing');
   el.style.opacity = 1; 
   el.style.visibility = 'visible';
+  // Add breathing effect to visible sprites
+  if (!el.classList.contains('breathing')) {
+    el.classList.add('breathing');
+  }
 }
 function hideSprite(el){ 
   el.classList.remove('show', 'breathing', 'speaking', 'non-speaking', 'happy', 'serious', 'thoughtful'); 
@@ -915,8 +1024,69 @@ function hideSprite(el){
   el.style.visibility = 'hidden';
 }
 function switchBG(bgEl){ 
-  [bgSilence,bgWhisper,bgAwaken,bgIgnite,bgAgni].forEach(b=>b.classList.remove('show')); 
-  setTimeout(()=> bgEl.classList.add('show'), 80); 
+  // Accept either a DOM element or a string ID
+  let bgElement = bgEl;
+  if (typeof bgEl === 'string') {
+    bgElement = document.getElementById(bgEl);
+  }
+  
+  if (!bgElement) {
+    console.warn('switchBG: Background element not found:', bgEl);
+    return;
+  }
+  
+  // Hide ALL backgrounds (not just the first 5)
+  document.querySelectorAll('.bg').forEach(b => {
+    b.classList.remove('show');
+  });
+  
+  // Show the new background after a brief delay for smooth transition
+  setTimeout(() => {
+    if (bgElement) {
+      bgElement.classList.add('show');
+      // Ensure the element is visible
+      bgElement.style.display = '';
+      bgElement.style.opacity = '1';
+      bgElement.style.visibility = 'visible';
+    }
+  }, 80); 
+}
+
+/* ---------- Sprite Switching Function ---------- */
+function switchSprite(character, spriteVariant) {
+  // Accept either a DOM element or a string ID
+  let spriteElement = spriteVariant;
+  if (typeof spriteVariant === 'string') {
+    spriteElement = document.getElementById(spriteVariant);
+  }
+  
+  if (!spriteElement) {
+    console.warn('switchSprite: Sprite element not found:', spriteVariant);
+    return;
+  }
+  
+  // Hide ALL sprites of the same character type using CSS selector (more reliable)
+  const characterClass = character === 'apsara' ? '.sprite.apsara' : '.sprite.gandharva';
+  document.querySelectorAll(characterClass).forEach(sprite => {
+    if (sprite && sprite !== spriteElement) {
+      sprite.classList.remove('show', 'breathing', 'speaking', 'non-speaking', 'happy', 'serious', 'thoughtful');
+      sprite.style.opacity = '0';
+      sprite.style.visibility = 'hidden';
+      sprite.style.display = 'none';
+    }
+  });
+  
+  // Show the new sprite immediately (no delay needed since we're hiding first)
+  if (spriteElement) {
+    spriteElement.style.display = '';
+    spriteElement.style.opacity = '1';
+    spriteElement.style.visibility = 'visible';
+    spriteElement.classList.add('show');
+    // Add breathing effect if not already present
+    if (!spriteElement.classList.contains('breathing')) {
+      spriteElement.classList.add('breathing');
+    }
+  }
 }
 
 /* ---------- Sprite Effects ---------- */
@@ -931,24 +1101,32 @@ function setSpriteEmotion(sprite, emotion) {
 }
 
 function highlightSpeaker(speakerName) {
+  // Get all sprite variants
+  const allApsaraSprites = [apsara, apsaraBlessingPeace, apsaraGuidingGlow, apsaraListeningPose, apsaraListeningSerene, apsaraProtectiveAura, apsaraRevelationLight, apsaraReverentPose, apsaraTeachingPose];
+  const allGandharvaSprites = [gandharva, gandharvaBlessingLight, gandharvaContemplativeCalm, gandharvaExplainingPose, gandharvaGuiding, gandharvaListeningPose, gandharvaListeningSerene, gandharvaResonanceAura, gandharvaSilentObserve, gandharvaTeachingGesture];
+  
   // Remove speaking and non-speaking classes from all sprites
   player.classList.remove('speaking', 'non-speaking');
-  apsara.classList.remove('speaking', 'non-speaking');
-  gandharva.classList.remove('speaking', 'non-speaking');
+  allApsaraSprites.forEach(s => { if (s) s.classList.remove('speaking', 'non-speaking'); });
+  allGandharvaSprites.forEach(s => { if (s) s.classList.remove('speaking', 'non-speaking'); });
   
-  // Add speaking class to the current speaker
+  // Add speaking class to the current speaker (find visible sprite)
   if (speakerName === 'Player' || speakerName === '???') {
     player.classList.add('speaking');
-    apsara.classList.add('non-speaking');
-    gandharva.classList.add('non-speaking');
+    allApsaraSprites.forEach(s => { if (s) s.classList.add('non-speaking'); });
+    allGandharvaSprites.forEach(s => { if (s) s.classList.add('non-speaking'); });
   } else if (speakerName === 'Apsara') {
-    apsara.classList.add('speaking');
+    // Find the currently visible Apsara sprite
+    const visibleApsara = allApsaraSprites.find(s => s && s.classList.contains('show'));
+    if (visibleApsara) visibleApsara.classList.add('speaking');
     player.classList.add('non-speaking');
-    gandharva.classList.add('non-speaking');
+    allGandharvaSprites.forEach(s => { if (s) s.classList.add('non-speaking'); });
   } else if (speakerName === 'Gandharva') {
-    gandharva.classList.add('speaking');
+    // Find the currently visible Gandharva sprite
+    const visibleGandharva = allGandharvaSprites.find(s => s && s.classList.contains('show'));
+    if (visibleGandharva) visibleGandharva.classList.add('speaking');
     player.classList.add('non-speaking');
-    apsara.classList.add('non-speaking');
+    allApsaraSprites.forEach(s => { if (s) s.classList.add('non-speaking'); });
   }
   
   // Play sound effect (simulated)
@@ -965,30 +1143,75 @@ function playCharacterSFX(character) {
 
 /* ---------- Typewriter Effect ---------- */
 function setSpeaker(name) {
-  speaker.textContent = name ? `— ${sanitizeEnglish(name)}` : '—';
+  speaker.textContent = name ? `- ${sanitizeEnglish(name)}` : '-';
   // Ensure the speaking character is visible
   if (name === 'Player' || name === '???') { showSprite(player); }
-  else if (name === 'Apsara') { showSprite(apsara); }
-  else if (name === 'Gandharva') { showSprite(gandharva); }
+  else if (name === 'Apsara') { 
+    // Find the currently visible Apsara sprite, or use default
+    const visibleApsara = document.querySelector('.sprite.apsara.show');
+    if (visibleApsara) {
+      showSprite(visibleApsara);
+    } else {
+      switchSprite('apsara', apsara);
+    }
+  }
+  else if (name === 'Gandharva') { 
+    // Find the currently visible Gandharva sprite, or use default
+    const visibleGandharva = document.querySelector('.sprite.gandharva.show');
+    if (visibleGandharva) {
+      showSprite(visibleGandharva);
+    } else {
+      switchSprite('gandharva', gandharva);
+    }
+  }
   highlightSpeaker(name);
 }
 
 function typeText(txt, callback) {
+  // Clear the text box first
+  if (!textBox) {
+    console.error('textBox element not found');
+    if (callback) callback();
+    return;
+  }
+  
   textBox.textContent = "";
+  
   // Sanitize to English-only ASCII for dialogue display
-  const clean = sanitizeEnglish(txt||'');
-  // Convert to array of grapheme clusters
+  let clean = sanitizeEnglish(txt || '');
+  
+  // Double-check: ensure only ASCII characters remain
+  clean = clean.replace(/[^\x20-\x7E]/g, '');
+  
+  // Safety: if text is empty or corrupted, show error message
+  if (!clean || clean.trim().length === 0) {
+    console.warn('Empty or corrupted text detected:', txt);
+    clean = '[Text unavailable]';
+  }
+  
+  // Convert to array of characters
   const chars = Array.from(clean);
   let i = 0;
-  const interval = setInterval(() => {
+  
+  // Clear any existing interval
+  if (window.typeTextInterval) {
+    clearInterval(window.typeTextInterval);
+  }
+  
+  window.typeTextInterval = setInterval(() => {
     if (i < chars.length) {
-      textBox.textContent += chars[i];
+      // Ensure each character is ASCII before adding
+      const char = chars[i];
+      if (char && char.charCodeAt(0) >= 32 && char.charCodeAt(0) <= 126) {
+        textBox.textContent += char;
+      }
       i++;
     } else {
-      clearInterval(interval);
+      clearInterval(window.typeTextInterval);
+      window.typeTextInterval = null;
       if (callback) callback();
     }
-  }, state.settings.textSpeed);
+  }, state.settings.textSpeed || 35);
 }
 
 /* ---------- SCENES (Provided by mandala1.js) ---------- */
@@ -1011,16 +1234,9 @@ function enterScene(sceneKey){
   currentStepIndex = 0;
   state.currentScene = sceneKey;
 
-  // Align HUD hymn info with scene key to avoid off-by-one
-  try{
-    if (sceneKey && sceneKey.startsWith('mandala1_hymn1_')){
-      const idx = sceneKey.split('_').pop();
-      if (idx && !Number.isNaN(parseInt(idx,10))){
-        state.currentHymn = `1.${parseInt(idx,10)}`;
-        updateHymnInfo();
-      }
-    }
-  }catch(e){}
+  // Don't set hymn number here - let the scene actions set it to avoid timing issues
+  // But initialize hymn info with current state
+  updateHymnInfo();
   
   // Handle player visibility based on scene importance
   if (state.importantScenes.includes(sceneKey)) {
@@ -1047,7 +1263,11 @@ function runStep(){
   }
   
   // First, run the action (if any) to set up the scene
+  // This will update state.currentHymn if needed
   if (step.action) step.action();
+  
+  // Update hymn info after action runs (in case hymn number changed)
+  updateHymnInfo();
   
   // Then set the speaker and highlight
   setSpeaker(step.who);
@@ -1079,7 +1299,7 @@ function onSceneEnd(sceneKey){
   if (sceneKey === 'intro_cinematic'){
     state.mandala = 1;
     updateHUD();
-    showSprite(apsara); showSprite(gandharva);
+    switchSprite('apsara', apsara); switchSprite('gandharva', gandharva);
     setTimeout(()=> enterScene('mandala1_opening'), 700);
     return;
   }
@@ -1147,7 +1367,7 @@ function showDeepAnswerChoices(){
 function addChoice(label, cb){
   const d = document.createElement('div');
   d.className = 'choice';
-  d.textContent = label;
+  d.textContent = sanitizeEnglish(label);
   d.onclick = cb;
   choiceGrid.appendChild(d);
 }
@@ -1222,12 +1442,24 @@ function shuffleArray(a){
 /* ---------- Hymn Progression ---------- */
 function goToNextHymn(){
   try{
-    const hid = state.currentHymn || '1.1';
-    const parts = hid.split('.');
-    const n = parseInt(parts[1]||'1', 10);
-    const next = n + 1;
-    if (next <= 191){
-      const key = `mandala1_hymn1_${next}`;
+    // Calculate from current scene key to ensure accuracy
+    const sceneKey = state.currentScene || '';
+    let nextNum = 1;
+    
+    if (sceneKey && sceneKey.startsWith('mandala1_hymn1_')){
+      const idx = sceneKey.split('_').pop();
+      if (idx && !Number.isNaN(parseInt(idx,10))){
+        nextNum = parseInt(idx,10) + 1;
+      }
+    } else {
+      // Fallback: use state.currentHymn if available
+      const hid = state.currentHymn || '1.1';
+      const parts = hid.split('.');
+      nextNum = parseInt(parts[1]||'1', 10) + 1;
+    }
+    
+    if (nextNum <= 191){
+      const key = `mandala1_hymn1_${nextNum}`;
       enterScene(key);
     } else {
       enterScene('mandala1_conclusion');
@@ -1849,10 +2081,24 @@ function showMandalaConclusion() {
 menuBtn.onclick = showMenu;
 codexBtn.onclick = openCodex;
 saveBtn.onclick = doSave;
-vnMenuBtn.onclick = window.showVNOverlay;
+vnMenuBtn.onclick = () => {
+  if (window.showVNOverlay) {
+    window.showVNOverlay();
+  } else {
+    console.error('showVNOverlay not available - menuOverlay.js may not be loaded');
+  }
+};
 closeMenuBtn.onclick = closeMenu;
 closeCodexBtn.onclick = closeCodex;
 closeMeaningBtn.onclick = closeMeaningModal;
+
+// Expose state and functions to window for menuOverlay.js
+window.state = state;
+window.saveAuto = saveAuto;
+window.updateHUD = updateHUD;
+window.updateHymnInfo = updateHymnInfo;
+window.updateCodexPanel = updateCodexPanel;
+window.enterScene = enterScene;
 
 // Initialize (but wait for scenes to load)
 loadCodex();
