@@ -2091,7 +2091,21 @@ vnMenuBtn.onclick = () => {
 closeMenuBtn.onclick = closeMenu;
 closeCodexBtn.onclick = closeCodex;
 closeMeaningBtn.onclick = closeMeaningModal;
-
+// Keyboard: Space / Enter trigger Next
+document.addEventListener('keydown', (ev) => {
+  const key = ev.key;
+  if (key !== ' ' && key !== 'Enter') return;
+  // Avoid when typing in inputs or content-editable
+  const ae = document.activeElement;
+  if (ae && (ae.tagName === 'INPUT' || ae.tagName === 'TEXTAREA' || ae.isContentEditable)) return;
+  // Do not advance when choice/puzzle overlays are shown
+  if (choicesEl.classList.contains('show') || puzzleEl.classList.contains('show')) return;
+  // Prevent page scrolling on Space/Enter
+  ev.preventDefault();
+  if (nextBtn && !nextBtn.disabled) {
+    nextBtn.click();
+  }
+}); 
 // Expose state and functions to window for menuOverlay.js
 window.state = state;
 window.saveAuto = saveAuto;
