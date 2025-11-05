@@ -236,6 +236,7 @@
   /* FABs */
   .fab{position:fixed;right:18px;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;background:var(--primary);color:#fff;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,0.35);z-index:11}
   #menuBtn{bottom:18px} #codexBtn{bottom:86px} #saveBtn{bottom:154px} #vnMenuBtn{bottom:224px} #fullscreenBtn{bottom:292px}
+  #mobileMenuBtn{display:none;bottom:18px}
 
   /* modals */
   .modal{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;z-index:20}
@@ -530,12 +531,28 @@
     color: rgba(255, 255, 255, 0.5);
   }
 
+  /* Mobile Menu Dropdown */
+  .mobile-menu-dropdown{
+    position:fixed;right:18px;bottom:70px;z-index:15;display:none;flex-direction:column;gap:8px;
+    background:var(--panel);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 8px 24px rgba(0,0,0,0.4);
+  }
+  .mobile-menu-dropdown.show{display:flex}
+  .mobile-menu-dropdown .fab{position:relative;right:auto;bottom:auto;width:44px;height:44px;margin:0}
+
   @media (max-width:800px){
     .sprite.player{left:6px}
     .sprite{height:calc(var(--sprite-total) - 6vh)}
     .dialogue{left:10px;right:10px}
     .choices{min-width:320px}
     .hymn-info{font-size:0.85rem}
+    /* Hide Auto and Skip on mobile */
+    #autoBtn, #skipBtn{display:none!important}
+    /* Move dialogue box up to avoid mobile nav bar */
+    .dialogue{bottom:80px}
+    /* Hide individual FABs on mobile, show mobile menu button */
+    #menuBtn, #codexBtn, #saveBtn, #vnMenuBtn, #fullscreenBtn{display:none!important}
+    #mobileMenuBtn{display:flex!important}
   }
   
   @media (max-width: 600px) {
@@ -777,6 +794,16 @@
     <button class="fab" id="saveBtn" title="Save" style="right:18px;bottom:154px">💾</button>
     <button class="fab" id="vnMenuBtn" title="Menu">📋</button>
     <button class="fab" id="fullscreenBtn" title="Fullscreen">⛶</button>
+    
+    <!-- Mobile Menu Button (hidden on desktop) -->
+    <button class="fab" id="mobileMenuBtn" title="Menu" style="display:none">☰</button>
+    <div class="mobile-menu-dropdown" id="mobileMenuDropdown">
+      <button class="fab" id="mobileMenuBtn_item" title="Mandala Menu">🌌</button>
+      <button class="fab" id="mobileCodexBtn" title="Codex">📜</button>
+      <button class="fab" id="mobileSaveBtn" title="Save">💾</button>
+      <button class="fab" id="mobileVNMenuBtn" title="Menu">📋</button>
+      <button class="fab" id="mobileFullscreenBtn" title="Fullscreen">⛶</button>
+    </div>
 
     <!-- Modals: Menu, Codex -->
     <div class="modal" id="menuModal">
@@ -938,6 +965,13 @@ const menuBtn = document.getElementById('menuBtn');
 const codexBtn = document.getElementById('codexBtn');
 const saveBtn = document.getElementById('saveBtn');
 const fullscreenBtn = document.getElementById('fullscreenBtn');
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenuDropdown = document.getElementById('mobileMenuDropdown');
+const mobileMenuBtn_item = document.getElementById('mobileMenuBtn_item');
+const mobileCodexBtn = document.getElementById('mobileCodexBtn');
+const mobileSaveBtn = document.getElementById('mobileSaveBtn');
+const mobileVNMenuBtn = document.getElementById('mobileVNMenuBtn');
+const mobileFullscreenBtn = document.getElementById('mobileFullscreenBtn');
 const menuModal = document.getElementById('menuModal');
 const codexModal = document.getElementById('codexModal');
 const meaningModal = document.getElementById('meaningModal');
@@ -2213,6 +2247,35 @@ if (document.readyState === 'loading') {
 document.addEventListener('click', ()=>{
   if (!mobileOrientationLocked) handleMobileOrientation();
 }, { once: true });
+
+/* ---------- Mobile Menu Toggle ---------- */
+if (mobileMenuBtn && mobileMenuDropdown) {
+  mobileMenuBtn.onclick = (e) => {
+    e.stopPropagation();
+    mobileMenuDropdown.classList.toggle('show');
+  };
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (mobileMenuDropdown && mobileMenuDropdown.classList.contains('show')) {
+      if (!mobileMenuDropdown.contains(e.target) && e.target !== mobileMenuBtn) {
+        mobileMenuDropdown.classList.remove('show');
+      }
+    }
+  });
+  // Wire up mobile menu buttons
+  if (mobileMenuBtn_item) mobileMenuBtn_item.onclick = () => { mobileMenuDropdown.classList.remove('show'); showMenu(); };
+  if (mobileCodexBtn) mobileCodexBtn.onclick = () => { mobileMenuDropdown.classList.remove('show'); openCodex(); };
+  if (mobileSaveBtn) mobileSaveBtn.onclick = () => { mobileMenuDropdown.classList.remove('show'); doSave(); };
+  if (mobileVNMenuBtn) mobileVNMenuBtn.onclick = () => { 
+    mobileMenuDropdown.classList.remove('show');
+    if (window.showVNOverlay) {
+      window.showVNOverlay();
+    } else {
+      console.error('showVNOverlay not available - menuOverlay.js may not be loaded');
+    }
+  };
+  if (mobileFullscreenBtn) mobileFullscreenBtn.onclick = () => { mobileMenuDropdown.classList.remove('show'); toggleFullscreen(); };
+}
 
 /* ---------- Event Listeners ---------- */
 menuBtn.onclick = showMenu;
