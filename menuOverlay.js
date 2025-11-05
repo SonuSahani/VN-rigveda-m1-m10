@@ -1,8 +1,12 @@
 // menuOverlay.js - Comprehensive Visual Novel Menu System
 (function () {
-  // Create overlay
-  const overlay = document.createElement('div');
-  overlay.id = 'vnOverlay';
+  // Use existing overlay or create new one
+  let overlay = document.getElementById('vnOverlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'vnOverlay';
+    document.body.appendChild(overlay);
+  }
   overlay.style.cssText = `
     position: fixed;
     inset: 0;
@@ -239,13 +243,16 @@
   panel.appendChild(galleryPanel);
   panel.appendChild(achievementsPanel);
   panel.appendChild(debateLogPanel);
+  
+  // Clear existing overlay content and append panel
+  overlay.innerHTML = '';
   overlay.appendChild(panel);
   
-  // Replace the existing overlay if it exists
-  const existingOverlay = document.getElementById('vnOverlay');
-  if (existingOverlay) {
-    existingOverlay.parentNode.replaceChild(overlay, existingOverlay);
-  } else {
+  // Ensure overlay is in the body (move it from stage if needed)
+  if (overlay.parentNode && overlay.parentNode !== document.body) {
+    overlay.parentNode.removeChild(overlay);
+  }
+  if (!overlay.parentNode) {
     document.body.appendChild(overlay);
   }
   
@@ -254,12 +261,22 @@
   
   // Functions to show/hide the overlay
   window.showVNOverlay = () => { 
-    overlay.style.display = 'flex'; 
+    console.log('showVNOverlay called', overlay);
+    if (!overlay) {
+      console.error('Overlay element not found!');
+      return;
+    }
+    overlay.style.display = 'flex';
+    overlay.style.visibility = 'visible';
+    overlay.style.opacity = '1';
     showMainPanel();
+    console.log('Overlay should now be visible');
   };
   
   window.hideVNOverlay = () => { 
-    overlay.style.display = 'none'; 
+    if (overlay) {
+      overlay.style.display = 'none';
+    }
   };
   
   // Panel navigation functions
@@ -382,12 +399,16 @@
       
       slot.onclick = () => {
         if (isSave) {
-          if (window.doSave) {
+          if (window.doSaveToSlot) {
             window.doSaveToSlot(i);
+          } else {
+            console.error('doSaveToSlot function not available');
           }
         } else {
-          if (window.doLoad) {
+          if (window.doLoadFromSlot) {
             window.doLoadFromSlot(i);
+          } else {
+            console.error('doLoadFromSlot function not available');
           }
         }
       };
@@ -496,34 +517,68 @@
     });
   }
 
-  // Event listeners
-  document.getElementById('applySettingsBtn').addEventListener('click', () => {
-    if (window.state && window.state.settings) {
-      window.state.settings.textSpeed = parseInt(document.getElementById('textSpeedSlider').value);
-      window.state.settings.autoPlaySpeed = parseInt(document.getElementById('autoPlaySlider').value);
-      window.state.settings.bgmVolume = parseInt(document.getElementById('bgmVolumeSlider').value);
-      window.state.settings.sfxVolume = parseInt(document.getElementById('sfxVolumeSlider').value);
-      window.state.settings.voiceVolume = parseInt(document.getElementById('voiceVolumeSlider').value);
-      window.state.settings.autoAdvance = document.getElementById('autoAdvanceToggle').checked;
-      window.state.settings.skipUnread = document.getElementById('skipUnreadToggle').checked;
-      
-      if (window.saveAuto) {
-        window.saveAuto();
-      }
-      if (window.audio && window.audio.setVolumes) {
-        window.audio.setVolumes();
-      }
-      
-      alert('Settings applied successfully!');
+  // Event listeners - use event delegation to ensure they work
+  function setupEventListeners() {
+    const applyBtn = document.getElementById('applySettingsBtn');
+    if (applyBtn) {
+      applyBtn.onclick = () => {
+        console.log('Apply settings clicked');
+        if (window.state && window.state.settings) {
+          const textSpeedEl = document.getElementById('textSpeedSlider');
+          const autoPlayEl = document.getElementById('autoPlaySlider');
+          const bgmVolumeEl = document.getElementById('bgmVolumeSlider');
+          const sfxVolumeEl = document.getElementById('sfxVolumeSlider');
+          const voiceVolumeEl = document.getElementById('voiceVolumeSlider');
+          const autoAdvanceEl = document.getElementById('autoAdvanceToggle');
+          const skipUnreadEl = document.getElementById('skipUnreadToggle');
+          
+          if (textSpeedEl) window.state.settings.textSpeed = parseInt(textSpeedEl.value) || 35;
+          if (autoPlayEl) window.state.settings.autoPlaySpeed = parseInt(autoPlayEl.value) || 1500;
+          if (bgmVolumeEl) window.state.settings.bgmVolume = parseInt(bgmVolumeEl.value) || 70;
+          if (sfxVolumeEl) window.state.settings.sfxVolume = parseInt(sfxVolumeEl.value) || 80;
+          if (voiceVolumeEl) window.state.settings.voiceVolume = parseInt(voiceVolumeEl.value) || 90;
+          if (autoAdvanceEl) window.state.settings.autoAdvance = autoAdvanceEl.checked;
+          if (skipUnreadEl) window.state.settings.skipUnread = skipUnreadEl.checked;
+          
+          console.log('Settings updated:', window.state.settings);
+          
+          if (window.saveAuto) {
+            window.saveAuto();
+            console.log('Settings saved');
+          }
+          if (window.audio && window.audio.setVolumes) {
+            window.audio.setVolumes();
+          }
+          
+          alert('Settings applied successfully!');
+          showMainPanel();
+        } else {
+          console.error('window.state or settings not available');
+          alert('Error: Game state not available');
+        }
+      };
+    } else {
+      console.error('applySettingsBtn not found');
     }
-  });
+    
+    const backFromSettingsBtn = document.getElementById('backFromSettingsBtn');
+    if (backFromSettingsBtn) backFromSettingsBtn.onclick = showMainPanel;
+    
+    const backFromSaveLoadBtn = document.getElementById('backFromSaveLoadBtn');
+    if (backFromSaveLoadBtn) backFromSaveLoadBtn.onclick = showMainPanel;
+    
+    const backFromGalleryBtn = document.getElementById('backFromGalleryBtn');
+    if (backFromGalleryBtn) backFromGalleryBtn.onclick = showMainPanel;
+    
+    const backFromAchievementsBtn = document.getElementById('backFromAchievementsBtn');
+    if (backFromAchievementsBtn) backFromAchievementsBtn.onclick = showMainPanel;
+    
+    const backFromDebateLogBtn = document.getElementById('backFromDebateLogBtn');
+    if (backFromDebateLogBtn) backFromDebateLogBtn.onclick = showMainPanel;
+  }
   
-  document.getElementById('backFromSettingsBtn').addEventListener('click', showMainPanel);
-  document.getElementById('backFromSaveLoadBtn').addEventListener('click', showMainPanel);
-  document.getElementById('backFromGalleryBtn').addEventListener('click', showMainPanel);
-  document.getElementById('backFromAchievementsBtn').addEventListener('click', showMainPanel);
-  const backFromDebateLogBtn = document.getElementById('backFromDebateLogBtn');
-  if (backFromDebateLogBtn) backFromDebateLogBtn.addEventListener('click', showMainPanel);
+  // Setup event listeners after panel is created
+  setupEventListeners();
   
   // Close on ESC
   document.addEventListener('keydown', (e) => {
@@ -553,40 +608,86 @@
   
   // Expose functions for save/load slots
   window.doSaveToSlot = function(slot) {
+    console.log('doSaveToSlot called with slot:', slot);
     try {
-      if (window.state) {
-        window.state.timestamp = Date.now();
-        localStorage.setItem(`rta_save_slot_${slot}`, JSON.stringify(window.state));
-        alert(`Game saved to slot ${slot}!`);
-        window.hideVNOverlay();
+      if (!window.state) {
+        console.error('window.state not available');
+        alert('Error: Game state not available. Cannot save.');
+        return;
       }
+      
+      // Create a copy of state with timestamp
+      const saveData = {
+        ...window.state,
+        timestamp: Date.now()
+      };
+      
+      const jsonData = JSON.stringify(saveData);
+      localStorage.setItem(`rta_save_slot_${slot}`, jsonData);
+      
+      console.log('Game saved to slot', slot, 'Size:', jsonData.length, 'bytes');
+      alert(`Game saved to slot ${slot}!`);
+      window.hideVNOverlay();
     } catch (e) {
-      alert('Save failed!');
+      console.error('Save failed:', e);
+      alert('Save failed! Error: ' + e.message);
     }
   };
   
   window.doLoadFromSlot = function(slot) {
+    console.log('doLoadFromSlot called with slot:', slot);
     try {
       const saveData = localStorage.getItem(`rta_save_slot_${slot}`);
-      if (saveData) {
-        const parsed = JSON.parse(saveData);
-        Object.assign(window.state, parsed);
-        
-        if (window.updateHUD) window.updateHUD();
-        if (window.updateHymnInfo) window.updateHymnInfo();
-        if (window.updateCodexPanel) window.updateCodexPanel();
-        
-        if (window.state.currentScene && window.enterScene) {
-          window.enterScene(window.state.currentScene);
-        }
-        
-        alert(`Game loaded from slot ${slot}!`);
-        window.hideVNOverlay();
-      } else {
+      if (!saveData) {
         alert('No save data found in this slot!');
+        return;
       }
+      
+      const parsed = JSON.parse(saveData);
+      console.log('Loaded save data:', parsed);
+      
+      if (!window.state) {
+        console.error('window.state not available');
+        alert('Error: Game state not available. Cannot load.');
+        return;
+      }
+      
+      // Restore all state properties
+      Object.keys(parsed).forEach(key => {
+        window.state[key] = parsed[key];
+      });
+      
+      console.log('State restored:', window.state);
+      
+      // Update UI
+      if (window.updateHUD) {
+        window.updateHUD();
+        console.log('HUD updated');
+      }
+      if (window.updateHymnInfo) {
+        window.updateHymnInfo();
+        console.log('Hymn info updated');
+      }
+      if (window.updateCodexPanel) {
+        window.updateCodexPanel();
+        console.log('Codex panel updated');
+      }
+      
+      // Restore scene
+      if (window.state.currentScene && window.enterScene) {
+        console.log('Restoring scene:', window.state.currentScene);
+        window.enterScene(window.state.currentScene);
+      }
+      
+      alert(`Game loaded from slot ${slot}!`);
+      window.hideVNOverlay();
     } catch (e) {
-      alert('Load failed!');
+      console.error('Load failed:', e);
+      alert('Load failed! Error: ' + e.message);
     }
   };
+  
+  // Debug: Log when overlay is ready
+  console.log('Menu overlay initialized. Overlay element:', overlay);
+  console.log('showVNOverlay function available:', typeof window.showVNOverlay);
 })();
